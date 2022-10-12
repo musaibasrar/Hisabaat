@@ -432,6 +432,11 @@
 	});
 </script>
 <script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+
+<script src="/hisabaat/js/bootstrap.min.js"></script>
+<link href="/hisabaat/css/select2.min.css" rel="stylesheet" />
+<script src="/hisabaat/js/select2.min.js"></script>
+
 <script type="text/javascript">
 
 	function generateStockIssuanceReport() {
@@ -549,18 +554,30 @@ for(Cookie cookie : cookies){
 						<tr>
 						
 						<tr>
-							<td class="alignRight">Issue To&nbsp;</td>
+							<td class="alignRight">Customer Name&nbsp;</td>
 							<td ><label>
-									<select name="issuedto"
-									id="issuedto" class="dropdownlist" style="font-size: 14px;" >
-										<option selected="selected">Mess Location 1</option>
-										<option></option>
-										<option>Mess Location 2</option>
+									<select name="issuedto"	id="issuedto" style="font-size: 24px;width: 220px;"  class="form-control select2" required>
+										        	<option></option>
+										        	<c:forEach items="${studentList}" var="student">
+										        	
+										        		<option value="${student.student.name}">${student.student.name}</option>
+										        	</c:forEach>
+										        </select>
+							
+							</label></td>
+							
+							<td class="alignRight">Item&nbsp;</td>
+							<td ><label>
+									<select name="itemname" id="itemname" class="dropdownlist" style="font-size: 14px;" required>
+											<option></option>
+										<c:forEach items="${itemslist}" var="itemslist">
+											<option value="${itemslist.id}">${itemslist.name}</option>
+										</c:forEach>
 								</select>
 							
 							</label></td>
 						
-							<td  class="alignRight">Purpose &nbsp;</td>
+							<!-- <td  class="alignRight">Purpose &nbsp;</td>
 							<td ><label> <select name="purpose"
 									id="purpose" class="dropdownlist" style="font-size: 14px;" required>
 										<option selected></option>
@@ -569,13 +586,13 @@ for(Cookie cookie : cookies){
 										<option>Dinner</option>
 										<option>Other</option>
 								</select>
-							</label></td>
+							</label></td> -->
 							
 						</tr>
 						<tr>
 							<td><br /></td>
 						</tr>
-						<tr>
+						<%-- <tr>
 							<td class="alignRight">Item&nbsp;</td>
 							<td ><label>
 									<select name="itemname" id="itemname" class="dropdownlist" style="font-size: 14px;" required>
@@ -589,7 +606,7 @@ for(Cookie cookie : cookies){
 						</tr>
 						<tr>
 							<td><br /></td>
-						</tr>
+						</tr> --%>
 						<tr>
 							<td><br /></td>
 						</tr>
@@ -682,6 +699,8 @@ for(Cookie cookie : cookies){
 
 		</div>
 	</form>
-	
+	<script>
+    $('.select2').select2();
+</script>
 </body>
 </html>

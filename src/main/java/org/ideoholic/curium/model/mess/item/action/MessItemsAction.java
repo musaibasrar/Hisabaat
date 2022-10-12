@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.ideoholic.curium.model.mess.item.service.MessItemsService;
 import org.ideoholic.curium.model.mess.supplier.service.MessSuppliersService;
+import org.ideoholic.curium.model.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,6 +59,7 @@ public class MessItemsAction {
 	@GetMapping("/issuanceStock")
 	public String issuanceStock() {
 		new MessItemsService(request, response).getIssuanceStock();
+		new StudentService(request, response).viewAllStudentsParents();
 		return "stockissuancereport";
 	}
 
