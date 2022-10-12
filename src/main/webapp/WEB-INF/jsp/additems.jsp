@@ -632,11 +632,7 @@ for(Cookie cookie : cookies){
 									<td><label> <select name="unitofmeasure"
 									id="unitofmeasure" style="font-size: 14px;" class="dropdownlist" required>
 										<option selected></option>
-										<option>Kilogram</option>
-										<option>Litre</option>
 										<option>Piece</option>
-										<option>Box</option>
-										<option>Packet</option>
 										
 								</select></label></td>
 								

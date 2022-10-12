@@ -931,7 +931,7 @@ for(Cookie cookie : cookies){
 		<div class="alert-box failure" id="div2">Items received failed, please try again!!!&nbsp;&nbsp;&nbsp;<button class="buttonred" id="2" onclick="closediv(this.id);">OK</button></div>
 		
 		<div style="height: 28px">
-			<button id="add">Receive Entry</button>
+			<button id="add">Purchase Entry</button>
 			<br />
 		</div>
 

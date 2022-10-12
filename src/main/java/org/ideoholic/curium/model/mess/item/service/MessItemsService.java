@@ -410,12 +410,11 @@ public class MessItemsService {
 				httpSession.setAttribute("issuedtoselected", "");
 			}
 			
-			if(!purpose.isEmpty()) {
-				subQuery = subQuery + "and purpose = '"+purpose+"'";
-				httpSession.setAttribute("purposeselected", "Purpose:&nbsp;"+purpose);
-			}else {
-			httpSession.setAttribute("purposeselected", "");
-			}
+			/*
+			 * if(!purpose.isEmpty()) { subQuery = subQuery + "and purpose = '"+purpose+"'";
+			 * httpSession.setAttribute("purposeselected", "Purpose:&nbsp;"+purpose); }else
+			 * { httpSession.setAttribute("purposeselected", ""); }
+			 */
 			
 			if(!item.isEmpty()) {
 				subQuery = subQuery + "and itemid = '"+item+"'";

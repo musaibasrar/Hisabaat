@@ -699,7 +699,7 @@
 	             
 	         }
 			xmlHttp.onreadystatechange = stateChanged;
-			xmlHttp.open("GET", "/SupplierBalance/getSupplierBalance?supplierid="+selected,true);
+			xmlHttp.open("GET", "/hisabaat/SupplierBalance/getSupplierBalance?supplierid="+selected,true);
 			xmlHttp.send(null);
 		
 	}
@@ -1223,7 +1223,6 @@ for(Cookie cookie : cookies){
 									<select name="bankname" id="bankname" class="dropdownlist" style="font-size: 14px;" required>
 											<option></option>
 											<option value="axisbank">Axis Bank</option>
-											<option value="canarabank">Canara Bank</option>
 											<option value="admin">Cash</option>
 								</select>
 							
