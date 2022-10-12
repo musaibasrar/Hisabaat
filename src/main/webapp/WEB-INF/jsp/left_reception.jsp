@@ -13,19 +13,19 @@ Author     : Musaib
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Left</title>
-        <script language="JavaScript" src="/hisabaat/js/motionpack.js"></script>
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+        <script language="JavaScript" src="/furnitureworld/js/motionpack.js"></script>
+        <link rel="stylesheet" href="/furnitureworld/css/datePicker/jquery-ui-1.8.18.custom.css">
+        <link rel="stylesheet" href="/furnitureworld/css/datePicker/demos.css">
 
-        <script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.widget.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/sliderAccess.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
-        <link href="/hisabaat/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
-        <script src="/hisabaat/js/notification/jquery.jnotify.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/furnitureworld/js/datePicker/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="/furnitureworld/js/datePicker/ui/jquery.ui.core.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery.ui.widget.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery.ui.accordion.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/sliderAccess.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
+        <link href="/furnitureworld/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
+        <script src="/furnitureworld/js/notification/jquery.jnotify.js" type="text/javascript"></script>
 
         <script type="text/javascript">
             var get;
@@ -431,7 +431,7 @@ Author     : Musaib
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/furnitureworld/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -454,61 +454,61 @@ for(Cookie cookie : cookies){
         <div id="container" style="width: 100%" >
             <h5 style="font-size: 12px"><a href="#">Students</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/StudentProcess/viewAll" >View All</a><br/>
-                <a target="mainFrame" href="/hisabaat/feesstructure" >Fees Structure</a><br/>
+                <a target="mainFrame" href="/furnitureworld/StudentProcess/viewAll" >View All</a><br/>
+                <a target="mainFrame" href="/furnitureworld/feesstructure" >Fees Structure</a><br/>
                 
 
             </div>
             <!-- <h5 style="font-size: 12px"><a href="#">Human Resource</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/EmployeeProcess/viewAllEmployee" >View Employee List</a><br/>
-                <a target="mainFrame" href="/hisabaat/EmployeeProcess/addEmployeePage" >Add Employee</a>
-                <a target="mainFrame" href="/hisabaat/DepartmentProcess/departmentView" >Add Department</a>
-                <a target="mainFrame" href="/hisabaat/PositionProcess/positionView" >Add Position</a>
+                <a target="mainFrame" href="/furnitureworld/EmployeeProcess/viewAllEmployee" >View Employee List</a><br/>
+                <a target="mainFrame" href="/furnitureworld/EmployeeProcess/addEmployeePage" >Add Employee</a>
+                <a target="mainFrame" href="/furnitureworld/DepartmentProcess/departmentView" >Add Department</a>
+                <a target="mainFrame" href="/furnitureworld/PositionProcess/positionView" >Add Position</a>
 
             </div> -->
 
             <h5 style="font-size: 12px"><a href="#">FEES</a></h5>
             
             <div>
-            	<a target="mainFrame" href="/hisabaat/FeesProcess/feesView" >Fees Category</a>
-                <a target="mainFrame" href="/hisabaat/FeesProcess/feesCollect" >Fees Collect</a><br/>
+            	<a target="mainFrame" href="/furnitureworld/FeesProcess/feesView" >Fees Category</a>
+                <a target="mainFrame" href="/furnitureworld/FeesProcess/feesCollect" >Fees Collect</a><br/>
                 
 
             </div> 
             
             <!-- <h5 style="font-size: 12px"><a href="#" >Administration</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/AdminProcess/viewAllExpenses" >Expenses</a><br/>
+                <a target="mainFrame" href="/furnitureworld/AdminProcess/viewAllExpenses" >Expenses</a><br/>
 
 
             </div> -->
             
             <h5 style="font-size: 12px"><a href="#" >Advance Search</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/AdvanceSearch" >Search</a><br/>
+                <a target="mainFrame" href="/furnitureworld/AdvanceSearch" >Search</a><br/>
 
 
             </div>
 			<!--
             <h5 style="font-size: 12px"><a href="#" >Promotion</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/Promotion" >Promotions</a><br/>
+                <a target="mainFrame" href="/furnitureworld/Promotion" >Promotions</a><br/>
 
 
             </div> -->
 
             <!-- <h5 style="font-size: 12px"><a href="#" >Archive</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/StudentProcess/archiveViewAll" >Archive Students</a><br/>
+                <a target="mainFrame" href="/furnitureworld/StudentProcess/archiveViewAll" >Archive Students</a><br/>
 
 
             </div> -->
 
             <!--  <h5 style="font-size: 12px"><a href="#" >Configurations</a></h5>
             <div>
-            	<a target="mainFrame" href="/hisabaat/StampFeesProcess/showFeesDetails" >Stamp Fee</a><br/>
-                <a target="mainFrame" href="/hisabaat/YearProcess/updateYear" >Academic year</a><br/>
+            	<a target="mainFrame" href="/furnitureworld/StampFeesProcess/showFeesDetails" >Stamp Fee</a><br/>
+                <a target="mainFrame" href="/furnitureworld/YearProcess/updateYear" >Academic year</a><br/>
                 
 
             </div> -->
@@ -516,15 +516,15 @@ for(Cookie cookie : cookies){
 
             <h5 style="font-size: 12px"><a href="#" >Extras</a></h5>
             <div >
-               <!--  <a target="mainFrame" href="/hisabaat/Backup&Restore" >Backup</a><br/>
-                <a target="mainFrame" href="/hisabaat/currentIssue" >Current Issue</a><br/>
-                <a target="mainFrame" href="/hisabaat/changePassword" >Change Password</a><br/> -->
-                <a target="mainFrame" href="/hisabaat/feesCollectionDetails" >Fees Collection Details</a><br/>
+               <!--  <a target="mainFrame" href="/furnitureworld/Backup&Restore" >Backup</a><br/>
+                <a target="mainFrame" href="/furnitureworld/currentIssue" >Current Issue</a><br/>
+                <a target="mainFrame" href="/furnitureworld/changePassword" >Change Password</a><br/> -->
+                <a target="mainFrame" href="/furnitureworld/feesCollectionDetails" >Fees Collection Details</a><br/>
             </div>
             
            <!--  <h5 style="font-size: 12px"><a href="#" >Reports</a></h5>
             <div >
-                <a target="mainFrame" href="/hisabaat/studentsdetailsreports" >Student Details</a><br/>
+                <a target="mainFrame" href="/furnitureworld/studentsdetailsreports" >Student Details</a><br/>
                 
             </div>  -->
             

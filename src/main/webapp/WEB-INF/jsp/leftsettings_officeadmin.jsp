@@ -13,20 +13,20 @@ Author     : Musaib
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Left</title>
-        <script language="JavaScript" src="/hisabaat/js/motionpack.js"></script>
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+        <script language="JavaScript" src="/furnitureworld/js/motionpack.js"></script>
+        <link rel="stylesheet" href="/furnitureworld/css/datePicker/jquery-ui-1.8.18.custom.css">
+        <link rel="stylesheet" href="/furnitureworld/css/datePicker/demos.css">
 		
-        <script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.widget.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/sliderAccess.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
-        <link href="/hisabaat/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
-        <script src="/hisabaat/js/notification/jquery.jnotify.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="/hisabaat/css/font-awesome.css">
+        <script type="text/javascript" src="/furnitureworld/js/datePicker/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="/furnitureworld/js/datePicker/ui/jquery.ui.core.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery.ui.widget.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery.ui.accordion.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/sliderAccess.js"></script>
+        <script src="/furnitureworld/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
+        <link href="/furnitureworld/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
+        <script src="/furnitureworld/js/notification/jquery.jnotify.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="/furnitureworld/css/font-awesome.css">
       
         <script type="text/javascript">
             var req;
@@ -317,7 +317,7 @@ Author     : Musaib
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/furnitureworld/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -340,68 +340,68 @@ for(Cookie cookie : cookies){
         <div id="container" style="width: 95%" >
             <h5 style="font-size: 12px"><a href="#">General</a></h5>
             <div>
-                <!-- <a target="mainFrame" href="/hisabaat/YearProcess/updateYear" style="font-size: 12px;">Academic year</a><br/> -->
-                <a target="mainFrame" href="/hisabaat/PeriodProcess/periodConfiguration" style="font-size: 12px;">Time Table</a><br/>
+                <!-- <a target="mainFrame" href="/furnitureworld/YearProcess/updateYear" style="font-size: 12px;">Academic year</a><br/> -->
+                <a target="mainFrame" href="/furnitureworld/PeriodProcess/periodConfiguration" style="font-size: 12px;">Time Table</a><br/>
             </div>
             
             <h5 style="font-size: 12px"><a href="#">Class</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/ClassProcess/viewClasses" style="font-size: 12px;">Add Classes</a><br/>
+                <a target="mainFrame" href="/furnitureworld/ClassProcess/viewClasses" style="font-size: 12px;">Add Classes</a><br/>
             </div>
             
             <h5 style="font-size: 12px"><a href="#">FEES</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/FeesProcess/feesView" style="font-size: 12px;">Fees Category</a><br/>
-                <a target="mainFrame" href="/hisabaat/StampFeesProcess/showFeesDetails" style="font-size: 12px;">Stamp Fee</a><br/>
+                <a target="mainFrame" href="/furnitureworld/FeesProcess/feesView" style="font-size: 12px;">Fees Category</a><br/>
+                <a target="mainFrame" href="/furnitureworld/StampFeesProcess/showFeesDetails" style="font-size: 12px;">Stamp Fee</a><br/>
             </div>
             
             <h5 style="font-size: 12px"><a href="#">Exams</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/ExamDetailsProcess/examSchedule" style="font-size: 12px;">Exam Schedule</a><br/>
-                <a target="mainFrame" href="/hisabaat/ExamDetailsProcess/readListOfExams" style="font-size: 12px;">Exam Details</a><br/>
-                <a target="mainFrame" href="/hisabaat/SubjectDetailsProcess/readListOfSubjectNames" style="font-size: 12px;">Subject Master</a><br/>
-                <a target="mainFrame" href="/hisabaat/SubjectDetailsProcess/readListOfSubjects" style="font-size: 12px;">Subject Details</a>
+                <a target="mainFrame" href="/furnitureworld/ExamDetailsProcess/examSchedule" style="font-size: 12px;">Exam Schedule</a><br/>
+                <a target="mainFrame" href="/furnitureworld/ExamDetailsProcess/readListOfExams" style="font-size: 12px;">Exam Details</a><br/>
+                <a target="mainFrame" href="/furnitureworld/SubjectDetailsProcess/readListOfSubjectNames" style="font-size: 12px;">Subject Master</a><br/>
+                <a target="mainFrame" href="/furnitureworld/SubjectDetailsProcess/readListOfSubjects" style="font-size: 12px;">Subject Details</a>
             </div>
             
           <!--   <h5 style="font-size: 12px"><a href="#">Attendance</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/AttendanceProcess/attendanceConfiguration" style="font-size: 12px;">Staff/Students</a><br/>
-                <a target="mainFrame" href="/hisabaat/AttendanceProcess/viewAllHolidays" style="font-size: 12px;">Holidays/WeeklyOff</a><br/>
+                <a target="mainFrame" href="/furnitureworld/AttendanceProcess/attendanceConfiguration" style="font-size: 12px;">Staff/Students</a><br/>
+                <a target="mainFrame" href="/furnitureworld/AttendanceProcess/viewAllHolidays" style="font-size: 12px;">Holidays/WeeklyOff</a><br/>
             </div>
             
               <h5 style="font-size: 12px"><a href="#" >Promotion</a></h5>
             <div>
-				<a target="mainFrame" href="/hisabaat/ClassProcess/classHierarchy" style="font-size: 12px;">Class Hierarchy</a><br/>
+				<a target="mainFrame" href="/furnitureworld/ClassProcess/classHierarchy" style="font-size: 12px;">Class Hierarchy</a><br/>
             </div> -->
             
             <h5 style="font-size: 12px"><a href="#">Staff</a></h5>
             <div>
                 
-                <a target="mainFrame" href="/hisabaat/DepartmentProcess/departmentView" style="font-size: 12px;">Add Department</a><br/>
-                <a target="mainFrame" href="/hisabaat/PositionProcess/positionView" style="font-size: 12px;">Add Position</a><br/>
+                <a target="mainFrame" href="/furnitureworld/DepartmentProcess/departmentView" style="font-size: 12px;">Add Department</a><br/>
+                <a target="mainFrame" href="/furnitureworld/PositionProcess/positionView" style="font-size: 12px;">Add Position</a><br/>
             </div>
 
             <!-- <h5 style="font-size: 12px"><a href="#" >Accounts</a></h5>
             <div >
-                <a target="mainFrame" href="/hisabaat/AccountProcess/getCurrentFinancialYear" style="font-size: 12px;">Accounting Year</a><br/>
+                <a target="mainFrame" href="/furnitureworld/AccountProcess/getCurrentFinancialYear" style="font-size: 12px;">Accounting Year</a><br/>
             </div>
             
              <h5 style="font-size: 12px"><a href="#" >H.R.</a></h5>
             <div >
-                <a target="mainFrame" href="/hisabaat/HrProcess/leaveType" style="font-size: 12px;">Leave Type</a><br/>
-                <a target="mainFrame" href="/hisabaat/HrProcess/assignLeave" style="font-size: 12px;">Assign/View Leave</a><br/>
-                <a target="mainFrame" href="/hisabaat/HrProcess/payHead" style="font-size: 12px;">Pay Head</a><br/>
-                <a target="mainFrame" href="/hisabaat/HrProcess/addPayHead" style="font-size: 12px;">Add Pay Head</a><br/>
-                <a target="mainFrame" href="/hisabaat/HrProcess/deletePayHead" style="font-size: 12px;">Delete Pay Head</a><br/>
-                <a target="mainFrame" href="/hisabaat/HrProcess/basicPaySettings" style="font-size: 12px;">Apply Basic Pay</a><br/>
-                <a target="mainFrame" href="/hisabaat/HrProcess/viewEditbasicPay" style="font-size: 12px;">View/Edit Basic Pay</a><br/>
-                <a target="mainFrame" href="/hisabaat/HrProcess/pfSettings" style="font-size: 12px;">PF Settings</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/leaveType" style="font-size: 12px;">Leave Type</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/assignLeave" style="font-size: 12px;">Assign/View Leave</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/payHead" style="font-size: 12px;">Pay Head</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/addPayHead" style="font-size: 12px;">Add Pay Head</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/deletePayHead" style="font-size: 12px;">Delete Pay Head</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/basicPaySettings" style="font-size: 12px;">Apply Basic Pay</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/viewEditbasicPay" style="font-size: 12px;">View/Edit Basic Pay</a><br/>
+                <a target="mainFrame" href="/furnitureworld/HrProcess/pfSettings" style="font-size: 12px;">PF Settings</a><br/>
             </div> -->
             
               <!--  <h5 style="font-size: 12px"><a href="#">Extras</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/AttendanceProcess/attendanceConfiguration" style="font-size: 12px;">Staff/Students</a><br/>
-                <a target="mainFrame" href="/hisabaat/AttendanceProcess/viewAllHolidays" style="font-size: 12px;">Holidays/WeeklyOff</a><br/>
+                <a target="mainFrame" href="/furnitureworld/AttendanceProcess/attendanceConfiguration" style="font-size: 12px;">Staff/Students</a><br/>
+                <a target="mainFrame" href="/furnitureworld/AttendanceProcess/viewAllHolidays" style="font-size: 12px;">Holidays/WeeklyOff</a><br/>
             </div> -->
             
             </div>

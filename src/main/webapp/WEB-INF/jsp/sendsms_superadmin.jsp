@@ -20,22 +20,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Send SMS Super Admin</title>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-<link rel="stylesheet" href="/hisabaat/css/validation/jquery.ketchup.css">
+<link rel="stylesheet" href="/furnitureworld/css/datePicker/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/furnitureworld/css/validation/jquery.ketchup.css">
 
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
-<script src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.widget.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.tabs.js"></script>
-<script src="/hisabaat/js/datePicker/ui/sliderAccess.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
-<script src="/hisabaat/js/validation/jquery.ketchup.all.min.js"></script>
+	src="/furnitureworld/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
+<script src="/furnitureworld/js/datePicker/jquery-1.7.1.js"></script>
+<script src="/furnitureworld/js/datePicker/ui/jquery.ui.core.js"></script>
+<script src="/furnitureworld/js/datePicker/ui/jquery.ui.widget.js"></script>
+<script src="/furnitureworld/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+<script src="/furnitureworld/js/datePicker/ui/jquery.ui.tabs.js"></script>
+<script src="/furnitureworld/js/datePicker/ui/sliderAccess.js"></script>
+<script src="/furnitureworld/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
+<script src="/furnitureworld/js/validation/jquery.ketchup.all.min.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.button.js"></script>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+	src="/furnitureworld/js/datePicker/ui/jquery.ui.button.js"></script>
+<link rel="stylesheet" href="/furnitureworld/css/datePicker/demos.css">
 
 <style type="text/css">
 .myclass {
@@ -284,10 +284,10 @@
 
 
 
-<script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="/furnitureworld/js/datetimepicker_css.js"></script>
 
-<script src="/hisabaat/JavaScript/actb.js"></script>
-<script src="/hisabaat/JavaScript/common.js"></script>
+<script src="/furnitureworld/JavaScript/actb.js"></script>
+<script src="/furnitureworld/JavaScript/common.js"></script>
 
 
 
@@ -583,7 +583,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/furnitureworld/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -707,7 +707,7 @@ for(Cookie cookie : cookies){
 							
 							function sendSMSNumbers() {
 								var form1 = document.getElementById("form1");
-								form1.action = "/hisabaat/SMSProcess/sendNumbersSMS";
+								form1.action = "/furnitureworld/SMSProcess/sendNumbersSMS";
 								form1.submit();
 							}
 						</script>

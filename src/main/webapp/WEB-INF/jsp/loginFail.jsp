@@ -15,8 +15,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	 <title>Curium - School ERP</title>
-	<link rel="stylesheet" href="/hisabaat/css/bootstrap3.min.css">
-	<script type="text/javascript" src="/hisabaat/js/openWindow.js"></script>
+	<link rel="stylesheet" href="/furnitureworld/css/bootstrap3.min.css">
+	<script type="text/javascript" src="/furnitureworld/js/openWindow.js"></script>
 	
 	<style type="text/css">
 	
@@ -108,7 +108,7 @@ form{
             function redirect(){
                 
                 var form1=document.getElementById("form1");
-                form1.action="/hisabaat/UserProcess/authenticate";
+                form1.action="/furnitureworld/UserProcess/authenticate";
                 form1.submit();
             }
         </script>
@@ -125,17 +125,17 @@ form{
             	if(type=='superadmin'){
                     window.open('/index_superadmin','_self');
                 }else if(type=='admin'){
-                    window.open('/hisabaat/index_admin','_self');
+                    window.open('/furnitureworld/index_admin','_self');
                 }else if(type=='feescollector'){
                     window.open('/index_feescollector','_self');
                 }else if(type=='officeadmin'){
-                	window.open('/hisabaat/index_officeadmin','_self');
+                	window.open('/furnitureworld/index_officeadmin','_self');
                 }else if(type=='marksentry'){
-                	window.open('/hisabaat/index_marksentry','_self');
+                	window.open('/furnitureworld/index_marksentry','_self');
                 }
             }
             else if(!flag1){
-            	window.open('/hisabaat/loginFail','_self');
+            	window.open('/furnitureworld/loginFail','_self');
             }
         </script>
                     	<!-- Main Content -->
@@ -143,19 +143,19 @@ form{
 		<div class="row main-content bg-success text-center">
 			<div class="col-md-4 text-center company__info">
 			<span class="company__logo">
-			<h2><img border="0" style="vertical-align: text-bottom;height: 80px;width: 100px;" alt="ideoholic" src="/hisabaat/images/fwlogo.png"></h2>
-			<h3 style="font-weight: bold;">Furniture World<!-- <img border="0" style="vertical-align: text-bottom;height: 120px;width: 200px;" alt="ideoholic" src="/hisabaat/images/shaheenwhitelogo.png"> --></h3></span></span>
+			<h2><img border="0" style="vertical-align: text-bottom;height: 80px;width: 100px;" alt="ideoholic" src="/furnitureworld/images/fwlogo.png"></h2>
+			<h3 style="font-weight: bold;">Furniture World<!-- <img border="0" style="vertical-align: text-bottom;height: 120px;width: 200px;" alt="ideoholic" src="/furnitureworld/images/shaheenwhitelogo.png"> --></h3></span></span>
 				<!-- <h3 class="company_title">Zaiqa<br> Enterprises</h3> -->
 			</div>
 			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
 				<div class="container-fluid">
 					<div class="row">
-						<!-- <span class="company__logo"><h2><img border="0" style="vertical-align: text-bottom;height: 50px;width: 73px;" alt="ideoholic" src="/hisabaat/images/shaheenlogo.png"></h2></span> -->
+						<!-- <span class="company__logo"><h2><img border="0" style="vertical-align: text-bottom;height: 50px;width: 73px;" alt="ideoholic" src="/furnitureworld/images/shaheenlogo.png"></h2></span> -->
 						<h3>Log In</h3>
 						<p align="center" style="color: red;font-size: 10px;">Please enter correct username and password</p>
 					</div>
 					<div class="row">
-						<form action="/hisabaat/UserProcess/authenticateUser"  method="post" class="form-group">
+						<form action="/furnitureworld/UserProcess/authenticateUser"  method="post" class="form-group">
 							<div class="row">
 								<input type="text" name="loginName" id="loginName" class="form__input" placeholder="Username">
 							</div>
@@ -177,10 +177,10 @@ form{
 	<!-- Footer -->
 	<div class="container-fluid text-center footer">
 		<p>
-			<!-- <p>An <img border="0" style="vertical-align: text-bottom;" alt="ideoholic" src="/hisabaat/images/ideoholic.png"> image with a default alignment.</p> --> 
+			<!-- <p>An <img border="0" style="vertical-align: text-bottom;" alt="ideoholic" src="/furnitureworld/images/ideoholic.png"> image with a default alignment.</p> --> 
 			
 			<a href="http://www.ideoholic.com" >
-				Powered by <img border="0" style="vertical-align: text-bottom;" alt="ideoholic" src="/hisabaat/images/ideoholic.png">
+				Powered by <img border="0" style="vertical-align: text-bottom;" alt="ideoholic" src="/furnitureworld/images/ideoholic.png">
 			</a>
 			
 	</div>

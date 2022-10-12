@@ -53,7 +53,7 @@ input {
 <form method="post"  enctype="multipart/form-data">
 
 	<div align="center">
-		<img alt="Govt Of Karnataka" src="/hisabaat/images/Karnatakalogo.png">
+		<img alt="Govt Of Karnataka" src="/furnitureworld/images/Karnatakalogo.png">
 	</div>
 
 <h2>GOVERNMENT OF KARNATAKA</h2>

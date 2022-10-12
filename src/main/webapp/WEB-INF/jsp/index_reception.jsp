@@ -59,7 +59,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/furnitureworld/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -73,11 +73,11 @@ for(Cookie cookie : cookies){
 %>
 
     <frameset    rows="139,*"frameborder="0" border="0" framespacing="0"  >
-        <frame   src="/hisabaat/header"   name="topFrame" scrolling="NO" noresize frameborder="0">
+        <frame   src="/furnitureworld/header"   name="topFrame" scrolling="NO" noresize frameborder="0">
 
             <frameset  cols="175,*" frameborder="0" border="0" framespacing="0">
-                <frame  src="/hisabaat/left_reception" name="leftFrame" scrolling="NO"  frameborder="1"   />
-                <frame src="/hisabaat/StudentProcess/viewAll" name="mainFrame" scrolling="yes" />
+                <frame  src="/furnitureworld/left_reception" name="leftFrame" scrolling="NO"  frameborder="1"   />
+                <frame src="/furnitureworld/StudentProcess/viewAll" name="mainFrame" scrolling="yes" />
             </frameset>
 
    

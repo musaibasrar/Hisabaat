@@ -17,8 +17,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Issue Stock</title>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-<link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+<link rel="stylesheet" href="/furnitureworld/css/datePicker/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/furnitureworld/css/datePicker/demos.css">
 
 <style type="text/css">
 .divCSS {
@@ -445,21 +445,21 @@
 }
 
 </style>
-<script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/furnitureworld/js/datePicker/jquery-1.7.1.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
+	src="/furnitureworld/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
 <script type="text/javascript" language="javascript"
-	src="/hisabaat/js/dataTable/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
+	src="/furnitureworld/js/dataTable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/furnitureworld/js/datePicker/ui/jquery.ui.core.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.tabs.js"></script>
+	src="/furnitureworld/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="/furnitureworld/js/datePicker/ui/jquery.ui.tabs.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
+	src="/furnitureworld/js/datePicker/ui/jquery.ui.accordion.js"></script>
 	
-	<script src="/hisabaat/js/bootstrap.min.js"></script>
-<link href="/hisabaat/css/select2.min.css" rel="stylesheet" />
-<script src="/hisabaat/js/select2.min.js"></script>
+	<script src="/furnitureworld/js/bootstrap.min.js"></script>
+<link href="/furnitureworld/css/select2.min.css" rel="stylesheet" />
+<script src="/furnitureworld/js/select2.min.js"></script>
 
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
@@ -554,14 +554,14 @@
 		});
 	});
 </script>
-<script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="/furnitureworld/js/datetimepicker_css.js"></script>
 <script type="text/javascript">
 
 	function saveissueentry() {
 		var form1 = document.getElementById("form1");
 		
 		if(form1.checkValidity()) {
-			form1.action = "/hisabaat/MessItemsMoveProcess/saveStockMove";
+			form1.action = "/furnitureworld/MessItemsMoveProcess/saveStockMove";
 			form1.method = "POST";
 			form1.submit();
 		}
@@ -571,7 +571,7 @@
 	
 	function cancelRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/MessItemsMoveProcess/cancelStockMove";
+		form1.action = "/furnitureworld/MessItemsMoveProcess/cancelStockMove";
 		form1.method = "POST";
 		form1.submit();
 
@@ -579,21 +579,21 @@
 	
 	function printRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/AdminProcess/printVoucher";
+		form1.action = "/furnitureworld/AdminProcess/printVoucher";
 		form1.method = "POST";
 		form1.submit();
 	}
 	
 	function approveRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/AdminProcess/approveVoucher";
+		form1.action = "/furnitureworld/AdminProcess/approveVoucher";
 		form1.method = "POST";
 		form1.submit();
 	}
 	
 	function rejectRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/AdminProcess/rejectVoucher";
+		form1.action = "/furnitureworld/AdminProcess/rejectVoucher";
 		form1.method = "POST";
 		form1.submit();
 	}
@@ -907,7 +907,7 @@
  	             
  	         }
  			xmlHttp.onreadystatechange = stateChanged;
- 			xmlHttp.open("GET", "/hisabaat/MessItemsMoveProcess/getCustomerLastPrice?customerName="+customerName+"&itemid="+itemId+"",true);
+ 			xmlHttp.open("GET", "/furnitureworld/MessItemsMoveProcess/getCustomerLastPrice?customerName="+customerName+"&itemid="+itemId+"",true);
  			xmlHttp.send(null);
  	}
  	
@@ -983,7 +983,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/furnitureworld/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -1062,7 +1062,7 @@ for(Cookie cookie : cookies){
 										        	
 										        		<option style="color: black;" value="${student.student.name}">${student.student.name}</option>
 										        	</c:forEach>
-										        </select>&nbsp;&nbsp;<a target="mainFrame" href="/hisabaat/StudentProcess/addNew">New Customer</a>
+										        </select>&nbsp;&nbsp;<a target="mainFrame" href="/furnitureworld/StudentProcess/addNew">New Customer</a>
 									 	</div>
 								</div>
 							</td>

@@ -12,13 +12,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CURIUM</title>
-        <link rel="stylesheet" href="/hisabaat/css/font-awesome.css">
+        <link rel="stylesheet" href="/furnitureworld/css/font-awesome.css">
 </head>
 <%
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/furnitureworld/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
