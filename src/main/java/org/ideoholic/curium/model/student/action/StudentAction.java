@@ -3,6 +3,8 @@
  */
 package org.ideoholic.curium.model.student.action;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -248,5 +250,16 @@ public class StudentAction {
 		} else {
 			return "notSaved";
 		}
+	}
+	
+	@GetMapping("/checkContactNo")
+	public void checkContactNo() {
+		
+			try {
+				new StudentService(request, response).checkContactNo();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		
 	}
 }
