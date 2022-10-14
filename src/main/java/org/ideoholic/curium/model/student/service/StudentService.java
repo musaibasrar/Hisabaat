@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Enumeration;
@@ -1721,5 +1722,36 @@ public class StudentService {
                 }
         
 }
+    
+    public void checkContactNo() throws IOException {
+		
+		if(httpSession.getAttribute(BRANCHID)!=null){
+			String contactNumber = request.getParameter("contactnumber");
+			List<Parents> result = new studentDetailsDAO().getStudentsList("from Student where classstudying='"+contactNumber+"'");
+			
+			
+			PrintWriter out = response.getWriter(); 
+			response.setContentType("text/xml");
+		        response.setHeader("Cache-Control", "no-cache");
+		        try {
+		        	
+		        	if(!result.isEmpty()){
+		        		String buffer = "<lable>Mobile No. Exists </lable>";
+			        	response.getWriter().println(buffer);
+		        	}else {
+		        		String buffer = "<lable></lable>";
+			        	response.getWriter().println(buffer);
+		        	}
+		        	
+		        } catch (Exception e) {
+		            out.write("<lable>Error</lable>");
+		        } finally {
+		            out.flush();
+		            out.close();
+		        }
+		}
+		
+		
+	}
 	
 }

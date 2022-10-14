@@ -451,34 +451,45 @@
 
 
 <script type="text/javascript">
-	function check(value) {
-
-		xmlHttp = GetXmlHttpObject()
-		var url = "/check";
-		url = url + "?name=" + value;
-		xmlHttp.onreadystatechange = stateChanged
-		xmlHttp.open("GET", url, true)
-		xmlHttp.send(null)
-	}
-	function stateChanged() {
-		if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
-			var showdata = xmlHttp.responseText;
-			document.getElementById("mydiv").innerHTML = showdata;
-		}
-	}
-	function GetXmlHttpObject() {
-		var xmlHttp = null;
-		try {
-			xmlHttp = new XMLHttpRequest();
-		} catch (e) {
-			try {
-				xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-			} catch (e) {
-				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	
+	
+			var xmlHttp;
+			var count;
+			function checkContactNo() {
+			
+				var selected=document.getElementById('addclass').value;
+					
+					 if (typeof XMLHttpRequest != "undefined") {
+						 xmlHttp = new XMLHttpRequest();
+			            
+			         } else if (window.ActiveXObject) {
+			        	 xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			             
+			         }
+					xmlHttp.onreadystatechange = stateChanged;
+					xmlHttp.open("GET", "/hisabaat/StudentProcess/checkContactNo?contactnumber="+selected,true);
+					xmlHttp.send(null);
 			}
-		}
-		return xmlHttp;
-	}
+			
+			function stateChanged() {
+			
+				if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+					document.getElementById("mydivmobile").innerHTML = xmlHttp.responseText;
+				}
+			}
+			function GetXmlHttpObject() {
+				var xmlHttp = null;
+				try {
+					xmlHttp = new XMLHttpRequest();
+				} catch (e) {
+					try {
+						xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+					} catch (e) {
+						xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+				}
+				return xmlHttp;
+			}
 
 
 	function CalculateAge(value) {
@@ -606,7 +617,7 @@
 							
 							<td class="alignLeft" style="padding-left: 20px;">Contact Number* &nbsp;</td>
 									<td ><label> <input
-											name="addclass" type="text" class="myclass" size="36"
+											name="addclass" type="text" class="myclass" size="36" onkeyup="checkContactNo();"
 											style="text-transform:capitalize;" required
 											id="addclass" size="36">
 
@@ -615,6 +626,23 @@
 						<tr>
 							<td><br /></td>
 						</tr>
+						<tr>
+							<td><br /></td>
+						</tr>
+						
+						<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td style="color: red;">
+                                    <div id="mydivmobile"></div>
+                                	</td>
+								</tr>
+						
+						<tr>
+							<td><br /></td>
+						</tr>
+
 						<tr>
 							<td><br /></td>
 						</tr>

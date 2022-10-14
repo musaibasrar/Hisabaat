@@ -1060,7 +1060,7 @@ for(Cookie cookie : cookies){
 										        	<option></option>
 										        	<c:forEach items="${studentList}" var="student">
 										        	
-										        		<option style="color: black;" value="${student.student.name}">${student.student.name}</option>
+										        		<option style="color: black;" value="${student.student.name}">${student.student.name}&nbsp;&nbsp;/&nbsp;&nbsp;${student.student.classstudying}</option>
 										        	</c:forEach>
 										        </select>&nbsp;&nbsp;<a target="mainFrame" href="/hisabaat/StudentProcess/addNew">New Customer</a>
 									 	</div>
