@@ -602,9 +602,9 @@
 
 		$("#tabs").tabs();
 		
-		$("#saveissueentry").button().click(function() {
+		/* $("#saveissueentry").button().click(function() {
 			saveissueentry();
-		});
+		}); */
 		$("#saveissueentry2").button().click(function() {
 			saveissueentry();
 		});
@@ -654,13 +654,14 @@
  	    var col5="<td class='dataTextInActive'><input type='text' value='0' onfocus='getLastPrice("+rowCount+");' onkeyup='getLastPrice("+rowCount+");'  name='itemunitprice' id=itemunitprice_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;'/><input type='hidden' name='salesprice' id=salesprice_"+rowCount+" value='' /></td>";
  	    var col6="<td class='dataTextInActive'><input type='text' value=''   name='sgst'  id=sgst_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
  	    var col7="<td class='dataTextInActive'><input type='text' value=''   name='cgst'  id=cgst_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
- 	    var col8="<td class='dataTextInActive'><input type='text' name='issuequantity' id=issuequantity_"+rowCount+" onkeyup='getLastPrice("+rowCount+");calculate("+rowCount+");' class='textfieldvaluesshorts' style='font-size: 14px;' onkeydown='calculate("+rowCount+")' required /></td>";
- 	   	var col9="<td class='dataTextInActive'><button onClick='addRow();'>+</button></td>";
+ 	    var col8="<td class='dataTextInActive'><input type='text' name='issuequantity' id=issuequantity_"+rowCount+" onkeyup='getLastPrice("+rowCount+")' class='textfieldvaluesshorts' style='font-size: 14px;' onkeyup='calculate("+rowCount+")' onkeydown='calculate("+rowCount+")' required /></td>";
+ 	    var col9="<td class='dataTextInActive'><input type='text' class='linetotalAmount' value='0'  name='linetotal' id=linetotal_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
+ 	   	var col10="<td class='dataTextInActive'><button onClick='addRow();'>+</button></td>";
         /* var col6="<td class='dataTextInActive'><input type='text' class='linetotalAmount' value='0'  name='linetotal' id=linetotal_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>"; */
         /* var col4="<td class='dataTextInActive'><input type='text' value='1' onclick='calculate("+rowCount+")'  onkeyup='calculate("+rowCount+")' name='feesQuantities' id=fees_quantity_"+rowCount+" /><input type='hidden'   id=hiddenfees_quantity_"+rowCount+" value='' /></td>"; */
         /* var col4="<td class='dataTextInActive'><select  onchange='calculate("+rowCount+")'  name='feesQuantities' id=fees_quantity_"+rowCount+"><option></option><option>JAN</option><option>Feb</option><option>MAR</option><option>APR</option><option>MAY</option><option>JUN</option><option>JUL</option><option>AUG</option><option>SEP</option><option>OCT</option><option>NOV</option><option>DEC</option></select><input type='hidden'   id=hiddenfees_quantity_"+rowCount+" value='' /></td>"; */
         /* var col4="<td class='dataTextInActive'><input class='feesAmount' type='text' value='0'      name='feesAmounts' id=fees_amount_"+rowCount+" /></td>"; */
-        var newRow = $("<tr class='trClass'>"+col1+col2+col3+col4+col5+col6+col7+col8+col9+"</tr>");
+        var newRow = $("<tr class='trClass'>"+col1+col2+col3+col4+col5+col6+col7+col8+col9+col10+"</tr>");
         $(function() {
             $("#dataTable").find('tbody').append(newRow);
         });
@@ -728,6 +729,22 @@
 	 	        if(parseFloat(issueQuantity)>0 && (parseFloat(issueQuantity,10)<=parseFloat(availableQuantity,10))){
 	 	        	//document.getElementById("errormessage_"+value2).style.display = 'none';
 	 	      	  document.getElementById("ids_"+value2).checked = true;  
+	 	      	  
+	 	      	  var unitprice = document.getElementById("itemunitprice_"+value2).value;
+	 	       	  var sgst=document.getElementById("sgst_"+value2).value;
+	 	       	  var cgst=document.getElementById("cgst_"+value2).value;
+	 	       	
+	 	       	  
+	 	       	  var sgstpercentage = (sgst / 100) * unitprice;
+	 	       	  var cgstpercentage = (cgst / 100) * unitprice;
+	 	       	
+	 	           var final1 = document.getElementById("linetotal_"+value2);
+	 	           
+	 	           var quantity = document.getElementById("issuequantity_"+value2).value;
+	 	           var gstprice = parseFloat(unitprice)+parseFloat(sgstpercentage)+parseFloat(cgstpercentage);
+	 	           var totalgstprice = parseFloat(gstprice)*quantity;
+	 	           final1.value=parseFloat(totalgstprice).toFixed(2);
+	 	           
 	 	        }else{
 	 	        	$( "#dialog" ).dialog( "open" );
 	 	        	document.getElementById("issuequantity_"+value2).value='';
@@ -790,9 +807,101 @@
             return false;
         }); 
         
+       
+       
+       $("#saveissueentry").button().click(function(){
+        	 $( "#dialogpaymentmethod" ).dialog( "open" );
+             return false;
+
+         });
+         
+         $(function() {
+             $( "#dialogpaymentmethod" ).dialog({
+                 autoOpen: false,
+                 height: 330,
+                 width: 550,
+                 modal: true,
+                 buttons: {
+                     OK: function() {
+                     	
+                    		 generatebill(document.getElementById("cashpayment"),document.getElementById("banktransfer"),
+                     					document.getElementById("chequetransfer"), document.getElementById("ackno"), 
+                     			document.getElementById("transferdate"), document.getElementById("transferbankname"),
+                     			document.getElementById("chequeno"), document.getElementById("chequedate"), document.getElementById("chequebankname"), 
+                     			document.getElementById("totalcashamount"), document.getElementById("totalbanktransferamount"),
+                     			document.getElementById("totalchequetransferamount"));
+                         		$( this ).dialog( "close" );
+                  		   }
+                 }
+             });
+         });
+         
 
 	});
    
+	
+	function generatebill(cashpayment,banktransfer,chequetransfer,ackno,transferdate,transferbankname,chequeno,chequedate,chequebankname,totalcashamount,totalbanktransferamount,
+			totalchequetransferamount){
+    	
+    	var paymentmethodbanktransfer = '';
+    	var paymentmethodchequetransfer = '';
+    	var paymentmethodcash = '';
+    	var cashpaymentvalue = '';
+    	var acknovalue = '';
+    	var transferdatevalue = '';
+    	var transferbanknamevalue = '';
+    	var chequenovalue = '';
+    	var chequedatevalue = '';
+    	var chequebanknamevalue = '';
+    	var totalcashamountvalue = '';
+    	var totalbanktransferamountvalue = '';
+    	var totalchequetransferamountvalue = '';
+    	
+    	if(banktransfer.checked == true ){
+    		paymentmethodbanktransfer = 'banktransfer';
+    		
+    	}
+    	
+    	if(chequetransfer.checked == true){
+    		paymentmethodchequetransfer = 'chequetransfer';
+    	}
+    	
+    	if(cashpayment.checked == true){
+    		paymentmethodcash = 'cashpayment';
+    	}
+    	
+    	if(ackno!=null){
+    		acknovalue = ackno.value;
+    	}
+    	
+    	if(transferdate!=null){
+    		transferdatevalue = transferdate.value;
+    	}
+    	
+    	if(transferbankname!=null){
+    		transferbanknamevalue = transferbankname.value;
+    	}
+    	if(chequeno!=null){
+    		chequenovalue = chequeno.value;
+    	}
+    	if(chequedate!=null){
+    		chequedatevalue = chequedate.value;
+    	}
+    	if(chequebankname!=null){
+    		chequebanknamevalue = chequebankname.value;
+    	}
+    	
+    	totalcashamountvalue = totalcashamount.value;
+    	totalbanktransferamountvalue = totalbanktransferamount.value;
+    	totalchequetransferamountvalue = totalchequetransferamount.value;
+    	
+    	var form1 = document.getElementById("form1");
+		form1.action="/hisabaat/MessItemsMoveProcess/saveStockMove?paymentmethodbanktransfer="+paymentmethodbanktransfer+"&paymentmethodchequetransfer="+paymentmethodchequetransfer+"&paymentmethodcash="+paymentmethodcash+"&ackno="+acknovalue+"&transferdate="+transferdatevalue+"&transferbankname="+transferbanknamevalue+"&chequeno="+chequenovalue+"&chequedate="+chequedatevalue+"&chequebankname="+chequebanknamevalue+"&totalcashamount="+totalcashamountvalue+"&totalbanktransferamount="+totalbanktransferamountvalue+"&totalchequetransferamount="+totalchequetransferamountvalue+"";
+		form1.method = "POST";
+		form1.submit();
+		
+    }
+	
 	 $(function(){
 		 
 		
@@ -976,6 +1085,207 @@
 		        		
 		        	}
 		        	
+		        	
+		        	function selectPayment(id){
+		            	
+		            	
+		            	if(id == 'cashpayment'){
+		            		
+		            		if(document.getElementById("cashpayment").checked){
+		            			
+		            			document.getElementById('cashamount').style.display = '';
+			            		document.getElementById('banktransferamount').style.display = "none";
+			            		document.getElementById('chequetransferamount').style.display = "none";
+			            		
+			            		document.getElementById('onlinechequeack').style.display = "none";
+			            		document.getElementById('onlinechequedate').style.display = "none";
+			            		document.getElementById('onlinechequebank').style.display = "none";
+			            		
+			            		document.getElementById('onlinetransferack').style.display = "none";
+			            		document.getElementById('onlinetransferdate').style.display = "none";
+			            		document.getElementById('onlinetransferbank').style.display = "none";
+		            			
+		            		}else{
+		            			
+		            			document.getElementById('cashamount').style.display = "none";
+			            		document.getElementById('banktransferamount').style.display = "none";
+			            		document.getElementById('chequetransferamount').style.display = "none";
+			            		
+			            		document.getElementById('onlinechequeack').style.display = "none";
+			            		document.getElementById('onlinechequedate').style.display = "none";
+			            		document.getElementById('onlinechequebank').style.display = "none";
+			            		
+			            		document.getElementById('onlinetransferack').style.display = "none";
+			            		document.getElementById('onlinetransferdate').style.display = "none";
+			            		document.getElementById('onlinetransferbank').style.display = "none";
+		            		}
+		            		
+		            		
+		            		
+		            			
+		            	}else if(id == 'banktransfer'){
+		            		
+		            		
+		            		if(document.getElementById("banktransfer").checked){
+		            		
+		            		document.getElementById('cashamount').style.display = "none";
+		            		document.getElementById('banktransferamount').style.display = '';
+		            		document.getElementById('chequetransferamount').style.display = "none";
+		            		
+		            		document.getElementById('onlinechequeack').style.display = "none";
+		            		document.getElementById('onlinechequedate').style.display = "none";
+		            		document.getElementById('onlinechequebank').style.display = "none";
+		            		
+		            		document.getElementById('onlinetransferack').style.display = '';
+		            		document.getElementById('onlinetransferdate').style.display = '';
+		            		document.getElementById('onlinetransferbank').style.display = '';
+		            		
+		            		
+		            	}else{
+	            			
+	            			document.getElementById('cashamount').style.display = "none";
+		            		document.getElementById('banktransferamount').style.display = "none";
+		            		document.getElementById('chequetransferamount').style.display = "none";
+		            		
+		            		document.getElementById('onlinechequeack').style.display = "none";
+		            		document.getElementById('onlinechequedate').style.display = "none";
+		            		document.getElementById('onlinechequebank').style.display = "none";
+		            		
+		            		document.getElementById('onlinetransferack').style.display = "none";
+		            		document.getElementById('onlinetransferdate').style.display = "none";
+		            		document.getElementById('onlinetransferbank').style.display = "none";
+	            		}
+	            		
+		            		
+		            		
+		            	}else if(id == 'chequetransfer'){
+		            		
+		            		
+		            		if(document.getElementById("chequetransfer").checked){
+		            			
+		            		document.getElementById('cashamount').style.display = "none";
+		            		document.getElementById('banktransferamount').style.display = "none";
+		            		document.getElementById('chequetransferamount').style.display = '';
+		            		
+		            		document.getElementById('onlinechequeack').style.display = '';
+		            		document.getElementById('onlinechequedate').style.display = '';
+		            		document.getElementById('onlinechequebank').style.display = '';
+		            		
+		            		document.getElementById('onlinetransferack').style.display = "none";
+		            		document.getElementById('onlinetransferdate').style.display = "none";
+		            		document.getElementById('onlinetransferbank').style.display = "none";
+		            		
+		            		
+		            	}else{
+	            			
+	            			document.getElementById('cashamount').style.display = "none";
+		            		document.getElementById('banktransferamount').style.display = "none";
+		            		document.getElementById('chequetransferamount').style.display = "none";
+		            		
+		            		document.getElementById('onlinechequeack').style.display = "none";
+		            		document.getElementById('onlinechequedate').style.display = "none";
+		            		document.getElementById('onlinechequebank').style.display = "none";
+		            		
+		            		document.getElementById('onlinetransferack').style.display = "none";
+		            		document.getElementById('onlinetransferdate').style.display = "none";
+		            		document.getElementById('onlinetransferbank').style.display = "none";
+	            		}
+	            		
+		            	}
+		            	
+		            }
+		        	
+		        	
+		        	function calculateGrandTotal() {
+		                var sum = 0.0;
+		                var column2 = $('.linetotalAmount')
+		                jQuery.each(column2,function(){
+		                    sum += parseFloat($(this).val());
+		                });
+		                
+		                $('#itemsTotalAmount').val(sum);
+		                $('#itemsGrandTotalAmount').val(sum);
+		            }
+		        	
+		        	$(document).ready(function() {
+		                
+		                
+		                $("#dataTable").keyup(function(){
+		                    
+		                    var sum = 0.0;
+		                    var totalSum=0.0;
+		                    var column2 = $('.linetotalAmount')
+		                    jQuery.each(column2,function(){
+		                        sum += parseFloat($(this).val());
+		                    });
+		                    
+		                    $('#itemsTotalAmount').val(sum);
+		                    $('#itemsGrandTotalAmount').val(sum);
+		                    
+		                });
+		                $("#dataTable").click(function(){
+		                    
+		                    var sum = 0.0;
+		                    var totalSum=0.0;
+		                    var column2 = $('.linetotalAmount')
+		                    jQuery.each(column2,function(){
+		                        sum += parseFloat($(this).val());
+		                    });
+		                    
+		                    $('#itemsTotalAmount').val(sum);
+		                    $('#itemsGrandTotalAmount').val(sum);
+		                });
+						$("#dataTable").focus(function(){
+		                    
+		                    var sum = 0.0;
+		                    var totalSum=0.0;
+		                    var column2 = $('.linetotalAmount')
+		                    jQuery.each(column2,function(){
+		                        sum += parseFloat($(this).val());
+		                    });
+		                    
+		                    $('#itemsTotalAmount').val(sum);
+		                    $('#itemsGrandTotalAmount').val(sum);
+		                });
+
+
+		            });
+		        	
+		        	function deleteRow(tableID) {
+		                try {
+		                    var table = document.getElementById(tableID);
+		                    var rowCount = table.rows.length;
+		                    if(rowCount==1){
+		                        alert('No records to delete');
+		                    }
+		                    for(var i=1; i<rowCount-3; i++) {
+		                        var row = table.rows[i];
+		                        var chkbox = row.cells[0].childNodes[0];
+		                        if(null != chkbox && true == chkbox.checked) {
+		                            table.deleteRow(i);
+		                            rowCount--;
+		                            i--;
+		                        }
+		                    }
+		                   
+		                    
+		                    var sum = 0.0;
+		                    var totalSum=0.0;
+		                    var column2 = $('.linetotalAmount')
+		                    jQuery.each(column2,function(){
+		                        sum += parseFloat($(this).val());
+		                    });
+		                    totalSum=sum;
+		                    
+		                    $('#itemsTotalAmount').val(totalSum);
+		                    $('#itemsGrandTotalAmount').val(totalSum);
+		                    	calculateGrandTotal();
+		                    //$('#grandTotalAmount').val(0);
+		                }catch(e) {
+		                    alert(e);
+		                }
+		            }
+		        	
         </script>
 
 </head>
@@ -1060,7 +1370,7 @@ for(Cookie cookie : cookies){
 										        	<option></option>
 										        	<c:forEach items="${studentList}" var="student">
 										        	
-										        		<option style="color: black;" value="${student.student.name}">${student.student.name}&nbsp;&nbsp;/&nbsp;&nbsp;${student.student.classstudying}</option>
+										        		<option style="color: black;" value="${student.student.name}_${student.student.classstudying}_${student.student.remarks}">${student.student.name}&nbsp;&nbsp;/&nbsp;&nbsp;${student.student.classstudying}</option>
 										        	</c:forEach>
 										        </select>&nbsp;&nbsp;<a target="mainFrame" href="/hisabaat/StudentProcess/addNew">New Customer</a>
 									 	</div>
@@ -1095,12 +1405,21 @@ for(Cookie cookie : cookies){
 								<th class="headerText">SGST Price</th>
 								<th class="headerText">CGST Price</th>
 								<th class="headerText">Issue Quantity</th>
+								<th class="headerText">Total (Incl. GST)</th>
 								<th class="headerText">Add</th>
 							</tr>
 						</thead>
 
 						<tbody>						
 						</tbody>
+						<tfoot>
+							<tr>
+
+								<td colspan="8" align="right" style="font-weight: bold;">Total&nbsp;&nbsp;</td>
+								<td align="center"><input type="text"
+									name="itemsTotalAmount" id="itemsTotalAmount" class="textfieldvaluesshorts" style="font-size: 14px;font-weight: bold;" value="0" onkeyup="calculateTransportationCharges();"/></td>
+							</tr>
+						</tfoot>
 					</table>
 					<br>
 					
@@ -1123,6 +1442,151 @@ for(Cookie cookie : cookies){
 	
 	<div id="dialog" title="Quantity not in stock">
 	</div>
+	
+	<div id="dialogpaymentmethod" title="Payment Method">
+	
+				<table style="width: auto;height: auto;">
+					<tr>
+           		 			<td>
+           		 				Grand Total: &nbsp;<input type="text" name="itemsGrandTotalAmount" id="itemsGrandTotalAmount" class="textfieldvaluesshorts" style="font-size: 14px;font-weight: bold;" readonly/>
+           		 				<br>
+           		 			</td>	
+           		 			
+           		 			
+           		 		</tr>
+				</table>
+				
+           		 
+           		 <table style="width: auto;height: auto;">
+						
+						<tr>
+							<td>Payment method: &nbsp;</td>
+						
+							<td>
+							
+								<input type="checkbox" id="cashpayment" name="paymentmethod" value="cashpayment" onclick="selectPayment(this.id)">
+								<label for="cashpayment">Cash</label>
+									
+								<input type="checkbox" id="banktransfer" name="paymentmethod" value="banktransfer" onclick="selectPayment(this.id)">
+								<label for="banktransfer">Bank Transfer</label>
+								
+								<input type="checkbox" id="chequetransfer" name="paymentmethod" value="chequetransfer" onclick="selectPayment(this.id)">
+								<label for="chequetransfer">Cheque</label>							
+							
+							</td>
+						<tr>
+							<td><br></td>
+						</tr>	
+							
+						</tr>
+						<tr id="cashamount" style="display: none;">
+							<td></td>
+						
+							<td>
+								Amount &nbsp;<input type="text" name="totalcashamount" id="totalcashamount" class="textfieldvaluesshorts" value="0" style="font-size: 14px;font-weight: bold;" />														
+							</td>
+							
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr id="banktransferamount" style="display: none;">
+							<td></td>
+						
+							<td>
+								Amount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="text" name="totalbanktransferamount" id="totalbanktransferamount" class="textfieldvaluesshorts" value="0" style="font-size: 14px;font-weight: bold;"/>														
+							</td>
+							
+						</tr>
+						<tr id="onlinetransferack" style="display: none;">
+							<td></td>
+						
+							<td>
+								Acknowledgement # &nbsp;<input type="text" id="ackno" name="ackno" class="textfieldvaluesshorts" style="width: 220px;font-size: 14px;font-weight: bold;">														
+							</td>
+							
+						</tr>
+						<tr id="onlinetransferdate" style="display: none;">
+							<td></td>
+						
+							<td>
+							Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="text"  name="transferdate"
+									class="textField" style="font-size: 14px;"
+									value="<fmt:formatDate type="date" value="${now}" pattern="dd/MM/yyyy"/>" 
+									id="transferdate" autocomplete="false" required
+									data-validate="validate(required)">
+								
+							</td>
+							
+						</tr>
+						
+						<tr id="onlinetransferbank" style="display: none;">
+							<td></td>
+						
+							<td>Bank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<label>
+									<select name="transferbankname" id="transferbankname" class="dropdownlist" style="font-size: 14px;width: 220px;" required>
+											<option value="sbi">SBI Bank</option>
+								</select>
+							
+							</label>
+							
+							</td>
+							
+						</tr>
+						
+						<tr id="chequetransferamount" style="display: none;">
+							<td></td>
+						
+							<td>
+								Amount &nbsp;&nbsp;&nbsp;<input type="text" name="totalchequetransferamount" id="totalchequetransferamount" value="0" class="textfieldvaluesshorts" style="font-size: 14px;font-weight: bold;" value="0"/>														
+							</td>
+							
+						</tr>
+						<tr id="onlinechequeack" style="display: none;">
+							<td></td>
+						
+							<td>
+								Cheque # &nbsp;<input type="text" id="chequeno" name="chequeno" class="textfieldvaluesshorts" style="width: 220px;font-size: 14px;font-weight: bold;">														
+							</td>
+							
+						</tr>
+						<tr id="onlinechequedate" style="display: none;">
+							<td></td>
+						
+							<td>
+							Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="text"  name="chequedate"
+									class="textField" style="font-size: 14px;"
+									value="<fmt:formatDate type="date" value="${now}" pattern="dd/MM/yyyy"/>" 
+									id="chequedate" autocomplete="false" required
+									data-validate="validate(required)">
+								
+							</td>
+							
+						</tr>
+						
+						<tr id="onlinechequebank" style="display: none;">
+							<td></td>
+						
+							<td>Bank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<label>
+									<select name="chequebankname" id="chequebankname" class="dropdownlist" style="font-size: 14px;width: 220px;" required>
+											<option value="sbi">SBI Bank</option>
+								</select>
+							
+							</label>
+							
+							</td>
+							
+						</tr>
+						
+					</table>
+			</div>
 	
 	<script>
     $('.select2').select2();
