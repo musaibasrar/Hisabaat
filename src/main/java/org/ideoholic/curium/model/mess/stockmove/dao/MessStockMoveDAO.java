@@ -12,6 +12,7 @@ import org.ideoholic.curium.model.account.dto.VoucherEntrytransactions;
 import org.ideoholic.curium.model.degreedetails.dto.Degreedetails;
 import org.ideoholic.curium.model.mess.item.dto.MessItems;
 import org.ideoholic.curium.model.mess.stockentry.dto.MessStockEntry;
+import org.ideoholic.curium.model.mess.stockmove.dto.Bill;
 import org.ideoholic.curium.model.mess.stockmove.dto.MessStockMove;
 import org.ideoholic.curium.model.parents.dto.Parents;
 import org.ideoholic.curium.model.pudetails.dto.Pudetails;
@@ -141,8 +142,10 @@ public class MessStockMoveDAO {
 
 
 	public boolean moveStockSave(List<MessStockMove> messStockMovesList, VoucherEntrytransactions transactions,
-			String updateDrAccount, String updateCrAccount, VoucherEntrytransactions transactionsIncome,
-			String updateDrAccountIncome, String updateCrAccountIncome) {
+			String updateDrAccount, String updateCrAccount, VoucherEntrytransactions transactionsIncomeCash,VoucherEntrytransactions transactionsIncomeBank,
+			VoucherEntrytransactions transactionsIncomeCheque,
+			String updateDrAccountIncomeCash, String updateCrAccountIncomeCash, String updateDrAccountIncomeBank, String updateCrAccountIncomeBank,
+			String updateDrAccountIncomeCheque, String updateCrAccountIncomeCheque) {
 		 
 		boolean result = false;
 		int billNo = 0;
@@ -150,20 +153,50 @@ public class MessStockMoveDAO {
 	        //this.session = sessionFactory.openCurrentSession();
 	        transaction = session.beginTransaction();
 			session.save(transactions);
-			session.save(transactionsIncome);
 			Query query = session.createQuery(updateDrAccount);
 			query.executeUpdate();
-			Query queryIncome = session.createQuery(updateDrAccountIncome);
-			queryIncome.executeUpdate();
 			Query query1 = session.createQuery(updateCrAccount);
 			query1.executeUpdate();
-			Query queryIncomeCr = session.createQuery(updateCrAccountIncome);
-			queryIncomeCr.executeUpdate();
-
+			
+			if(transactionsIncomeCash!=null) {
+				session.save(transactionsIncomeCash);
+			}
+			
+			if(transactionsIncomeBank!=null) {
+				session.save(transactionsIncomeBank);
+			}
+			
+			if(transactionsIncomeCheque!=null) {
+				session.save(transactionsIncomeCheque);
+			}
+			
+			
+			if(updateDrAccountIncomeCash!=null) {
+				Query queryIncome = session.createQuery(updateDrAccountIncomeCash);
+				queryIncome.executeUpdate();
+				Query queryIncomeCr = session.createQuery(updateCrAccountIncomeCash);
+				queryIncomeCr.executeUpdate();
+			}
+			
+			
+			if(updateDrAccountIncomeBank!=null) {
+				Query queryIncome = session.createQuery(updateDrAccountIncomeBank);
+				queryIncome.executeUpdate();
+				Query queryIncomeCr = session.createQuery(updateCrAccountIncomeBank);
+				queryIncomeCr.executeUpdate();
+			}
+			
+			
+			if(updateDrAccountIncomeCheque!=null) {
+				Query queryIncome = session.createQuery(updateDrAccountIncomeCheque);
+				queryIncome.executeUpdate();
+				Query queryIncomeCr = session.createQuery(updateCrAccountIncomeCheque);
+				queryIncomeCr.executeUpdate();
+			}
 			
 			Query queryMaxRow = session.createQuery("from MessStockMove ORDER BY id DESC");
-   		queryMaxRow.setMaxResults(1);
-			MessStockMove msm = (MessStockMove) queryMaxRow.uniqueResult();
+			queryMaxRow.setMaxResults(1);
+   			MessStockMove msm = (MessStockMove) queryMaxRow.uniqueResult();
 			
 			if(msm!=null) {
 				String[] externalId = msm.getExternalid().split("_");
@@ -204,10 +237,10 @@ return result;
 
 
 
-	public List<MessStockMove> getStockMoveDetails(int offset,
+	public List<Bill> getStockMoveDetails(int offset,
 			int noOfRecords, int branchId) {
 		
-        List<MessStockMove> results = new ArrayList<MessStockMove>();
+        List<Bill> results = new ArrayList<Bill>();
         
         try {
                 transaction = session.beginTransaction();
@@ -232,7 +265,7 @@ return result;
 
 	public MessStockMove getStockMoveDetails(int stockid) {
 		
-        MessStockMove results = new MessStockMove();
+		MessStockMove results = new MessStockMove();
         
         try {
                 transaction = session.beginTransaction();

@@ -14,10 +14,9 @@
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	 <title>Curium - School ERP</title>
-	<link rel="stylesheet" href="/furnitureworld/css/bootstrap3.min.css">
-	<script type="text/javascript" src="/furnitureworld/js/openWindow.js"></script>
-	
+	 <title>Hisabaat</title>
+	<link rel="stylesheet" href="/hisabaat/css/bootstrap3.min.css">
+	<script type="text/javascript" src="/hisabaat/js/openWindow.js"></script>
 	<style type="text/css">
 	.main-content{
 	width: 50%;
