@@ -13,20 +13,20 @@ Author     : Musaib
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Left</title>
-        <script language="JavaScript" src="/hisabaat/js/motionpack.js"></script>
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+        <script language="JavaScript" src="/kingwell/js/motionpack.js"></script>
+        <link rel="stylesheet" href="/kingwell/css/datePicker/jquery-ui-1.8.18.custom.css">
+        <link rel="stylesheet" href="/kingwell/css/datePicker/demos.css">
 		
-        <script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.widget.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/sliderAccess.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
-        <link href="/hisabaat/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
-        <script src="/hisabaat/js/notification/jquery.jnotify.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="/hisabaat/css/font-awesome.css">
+        <script type="text/javascript" src="/kingwell/js/datePicker/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="/kingwell/js/datePicker/ui/jquery.ui.core.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery.ui.widget.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery.ui.accordion.js"></script>
+        <script src="/kingwell/js/datePicker/ui/sliderAccess.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
+        <link href="/kingwell/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
+        <script src="/kingwell/js/notification/jquery.jnotify.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="/kingwell/css/font-awesome.css">
         <script type="text/javascript">
             var get;
             function getdata1() {
@@ -414,7 +414,7 @@ Author     : Musaib
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/kingwell/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -437,31 +437,31 @@ for(Cookie cookie : cookies){
         <div id="container" style="width: 100%" >
             <h5 style="font-size: 12px"><a href="#">Students</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/StudentProcess/viewAllSuperAdmin" style="font-size: 12px;">View All</a><br/>
+                <a target="mainFrame" href="/kingwell/StudentProcess/viewAllSuperAdmin" style="font-size: 12px;">View All</a><br/>
             </div>
             
             <h5 style="font-size: 12px"><a href="#">FEES</a></h5>
             
             <div>
-				<a target="mainFrame" href="/hisabaat/feesCollectionDetails" style="font-size: 12px;">Fees Details</a><br/>
+				<a target="mainFrame" href="/kingwell/feesCollectionDetails" style="font-size: 12px;">Fees Details</a><br/>
             </div> 
             
             <h5 style="font-size: 12px"><a href="#" style="font-size: 12px;">Archive</a></h5>
             <div>
-                <a target="mainFrame" href="/hisabaat/StudentProcess/archiveViewAll" >Archive Students</a><br/>
-                <a target="mainFrame" href="/hisabaat/ClassProcess/viewGraduated" >Graduated Students</a><br/>
-                <a target="mainFrame" href="/hisabaat/ClassProcess/viewDropped" >Dropped Out Students</a><br/>
-                <a target="mainFrame" href="/hisabaat/ClassProcess/viewLeftOut" >Left Out Students</a><br/>
+                <a target="mainFrame" href="/kingwell/StudentProcess/archiveViewAll" >Archive Students</a><br/>
+                <a target="mainFrame" href="/kingwell/ClassProcess/viewGraduated" >Graduated Students</a><br/>
+                <a target="mainFrame" href="/kingwell/ClassProcess/viewDropped" >Dropped Out Students</a><br/>
+                <a target="mainFrame" href="/kingwell/ClassProcess/viewLeftOut" >Left Out Students</a><br/>
             </div>
 
             <h5 style="font-size: 12px"><a href="#" >Extras</a></h5>
             <div >
-                <a target="mainFrame" href="/hisabaat/changePassword" style="font-size: 12px;">Change Password</a><br/>
+                <a target="mainFrame" href="/kingwell/changePassword" style="font-size: 12px;">Change Password</a><br/>
             </div>
             
             <h5 style="font-size: 12px"><a href="#" >Send Notifications</a></h5>
             <div >
-                <a target="mainFrame" href="/hisabaat/sendsms_superadmin" style="font-size: 12px;">SMS</a><br/>
+                <a target="mainFrame" href="/kingwell/sendsms_superadmin" style="font-size: 12px;">SMS</a><br/>
             </div>
            
             </div>

@@ -13,7 +13,7 @@
 	<artifactId>curium</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Hisabaat</name>
+	<name>kingwell</name>
 	<description>Stock Management and Billing developed by Ideoholic</description>
 	<properties>
 		<start-class>org.ideoholic.curium.CuriumApplication</start-class>

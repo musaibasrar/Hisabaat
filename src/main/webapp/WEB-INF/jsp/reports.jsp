@@ -13,20 +13,20 @@ Author     : Musaib
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reports</title>
-        <script language="JavaScript" src="/hisabaat/js/motionpack.js"></script>
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-        <link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+        <script language="JavaScript" src="/kingwell/js/motionpack.js"></script>
+        <link rel="stylesheet" href="/kingwell/css/datePicker/jquery-ui-1.8.18.custom.css">
+        <link rel="stylesheet" href="/kingwell/css/datePicker/demos.css">
 		
-        <script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.widget.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/sliderAccess.js"></script>
-        <script src="/hisabaat/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
-        <link href="/hisabaat/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
-        <script src="/hisabaat/js/notification/jquery.jnotify.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="/hisabaat/css/font-awesome.css">
+        <script type="text/javascript" src="/kingwell/js/datePicker/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="/kingwell/js/datePicker/ui/jquery.ui.core.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery.ui.widget.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery.ui.accordion.js"></script>
+        <script src="/kingwell/js/datePicker/ui/sliderAccess.js"></script>
+        <script src="/kingwell/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
+        <link href="/kingwell/css/notification/jquery.jnotify.css" rel="stylesheet" type="text/css" />
+        <script src="/kingwell/js/notification/jquery.jnotify.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="/kingwell/css/font-awesome.css">
         
         
         <style>
@@ -269,7 +269,7 @@ Author     : Musaib
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/kingwell/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -296,7 +296,7 @@ for(Cookie cookie : cookies){
             		
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;background-color: #f5f8f9;">
-            				 <a target="mainFrame" href="/hisabaat/MessItemsMoveProcess/billsReport" style="font-size: 12px;">Bill Report</a>
+            				 <a target="mainFrame" href="/kingwell/MessItemsMoveProcess/billsReport" style="font-size: 12px;">Bill Report</a>
             			</td>
             		</tr>
                 </table>
@@ -308,22 +308,22 @@ for(Cookie cookie : cookies){
             		
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;background-color: #f5f8f9;">
-            				 <a target="mainFrame" href="/hisabaat/AccountProcess/generalLedgerReport" style="font-size: 12px;">General Ledger Report</a>
+            				 <a target="mainFrame" href="/kingwell/AccountProcess/generalLedgerReport" style="font-size: 12px;">General Ledger Report</a>
             			</td>
             		</tr>
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;">
-            				<a target="mainFrame" href="/hisabaat/incomestatement" style="font-size: 12px;">Income Statement</a>
+            				<a target="mainFrame" href="/kingwell/incomestatement" style="font-size: 12px;">Income Statement</a>
             			</td>
             		</tr>
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;background-color: #f5f8f9;">
-            				 <a target="mainFrame" href="/hisabaat/trialbalance" style="font-size: 12px;">Trial Balance</a>
+            				 <a target="mainFrame" href="/kingwell/trialbalance" style="font-size: 12px;">Trial Balance</a>
             			</td>
             		</tr>
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;">
-            				<a target="mainFrame" href="/hisabaat/AccountProcess/balanceSheet" style="font-size: 12px;">Balance Sheet</a>
+            				<a target="mainFrame" href="/kingwell/AccountProcess/balanceSheet" style="font-size: 12px;">Balance Sheet</a>
             			</td>
             		</tr>
                 </table>
@@ -335,7 +335,7 @@ for(Cookie cookie : cookies){
             		
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;background-color: #f5f8f9;">
-            				 <a target="mainFrame" href="/hisabaat/adminexpensesreport" style="font-size: 12px;">Expense Report</a>
+            				 <a target="mainFrame" href="/kingwell/adminexpensesreport" style="font-size: 12px;">Expense Report</a>
             			</td>
             		</tr>
                 </table>
@@ -348,22 +348,22 @@ for(Cookie cookie : cookies){
             	<table style=" border-collapse: collapse;width: 100%">
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;background-color: #f5f8f9;">
-            				 <a target="mainFrame" href="/hisabaat/MessItemsProcess/currentStock" style="font-size: 12px;">Stock Quantity Report</a>
+            				 <a target="mainFrame" href="/kingwell/MessItemsProcess/currentStock" style="font-size: 12px;">Stock Quantity Report</a>
             			</td>
             		</tr>
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;">
-            				 <a target="mainFrame" href="/hisabaat/MessItemsProcess/batchStock" style="font-size: 12px;">Stock Price Report</a>
+            				 <a target="mainFrame" href="/kingwell/MessItemsProcess/batchStock" style="font-size: 12px;">Stock Price Report</a>
             			</td>
             		</tr>
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;background-color: #f5f8f9;">
-            				<a target="mainFrame" href="/hisabaat/MessItemsProcess/issuanceStock" style="font-size: 12px;">Stock Issuance Report</a>
+            				<a target="mainFrame" href="/kingwell/MessItemsProcess/issuanceStock" style="font-size: 12px;">Stock Issuance Report</a>
             			</td>
             		</tr>
             		<tr>
             			<td style="text-align: left;  padding: 4px;padding-left:20px ;">
-            				 <a target="mainFrame" href="/hisabaat/MessItemsProcess/receiveStock" style="font-size: 12px;">Stock Received Report</a>
+            				 <a target="mainFrame" href="/kingwell/MessItemsProcess/receiveStock" style="font-size: 12px;">Stock Received Report</a>
             			</td>
             		</tr>
             	</table>
