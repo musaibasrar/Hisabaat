@@ -175,7 +175,7 @@ public class MessItemsService {
 				String[] itemIds = request.getParameterValues("itemids");
 				String[] itemsName = request.getParameterValues("itemsname");
 				String[] itemsQuantity = request.getParameterValues("itemsquantity");
-				String[] unitPrice = request.getParameterValues("price");
+				String[] salesPrice = request.getParameterValues("price");
 				String[] batchNo = request.getParameterValues("batchno");
 				String[] lineTotal = request.getParameterValues("linetotal");
 				String sup = request.getParameter("supplierid");
@@ -206,8 +206,8 @@ public class MessItemsService {
 						MessStockEntry messStockEntry = new MessStockEntry();
 						
 						messStockEntry.setItemid(Integer.parseInt(itemIds[i]));
-						messStockEntry.setExternalid(purchasePrice[i]);
-						messStockEntry.setBatchno(unitPrice[i]);
+						messStockEntry.setExternalid(itemsName[i]+"_"+salesPrice[i]);
+						messStockEntry.setBatchno(batchNo[i]);
 						messStockEntry.setReceiveddate(DateUtil.indiandateParser(request.getParameter("itementrydate")));
 						messStockEntry.setItemunitprice(Float.parseFloat(purchasePrice[i]));
 						messStockEntry.setBranchid(Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));

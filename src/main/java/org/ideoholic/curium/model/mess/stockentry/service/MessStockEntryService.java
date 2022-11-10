@@ -127,15 +127,15 @@ public class MessStockEntryService {
 		        		
 		        			   MessItems messItems = new MessItemsDAO().getItem(messStockEntry.getItemid());
 		        			   float itemTotal = messStockEntry.getQuantity() * messStockEntry.getItemunitprice();
-		        			   
+		        			   String[] purchasePrice = messStockEntry.getExternalid().split("_");
 		        		rowBuidler.append(
 		        	                 "<tr style='border-color:#000000' border='1' cellpadding='1' cellspacing='1' >" + 
 		        			         "<td class='dataText'>"+messItems.getName()+"</td>" + 
 		        			         "<td class='dataText'>"+messStockEntry.getBatchno()+"</td>" + 
 		        			         "<td class='dataText'>"+messStockEntry.getQuantity()+"</td>" + 
 		        			         "<td class='dataText'>"+messItems.getUnitofmeasure()+"</td>" + 
+		        			         "<td class='dataText'>"+purchasePrice[1]+"</td>" +
 		        			         "<td class='dataText'>"+messStockEntry.getItemunitprice()+"</td>" +
-		        			         "<td class='dataText'>"+messStockEntry.getExternalid()+"</td>" +
 		        			         "<td class='dataText'>"+messStockEntry.getSgst()+"</td>" +
 		        			         "<td class='dataText'>"+messStockEntry.getCgst()+"</td>" +
 		        			         "<td class='dataText'>"+itemTotal+"</td>" + 

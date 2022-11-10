@@ -651,17 +651,19 @@
         var col2="<td class='dataTextInActive'><input type='text' name='itemsname' id=items_name_"+rowCount+" onkeyup='getLastPrice("+rowCount+");' class='textfieldvalues' style='font-size: 14px;' required/><input type='hidden' name='itemsids' id=items_ids_"+rowCount+" value='' /></td>";
  	    var col3="<td class='dataTextInActive'><input type='text' value='0'   name='itemsquantity'  id=items_quantity_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
  	   	var col4="<td class='dataTextInActive'><input type='text' value=''   name='itemsunitofmeasure'  id=items_unitofmeasure_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
- 	    var col5="<td class='dataTextInActive'><input type='text' value='0' onfocus='getLastPrice("+rowCount+");' onkeyup='getLastPrice("+rowCount+");'  name='itemunitprice' id=itemunitprice_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;'/><input type='hidden' name='salesprice' id=salesprice_"+rowCount+" value='' /></td>";
+ 	    var col5="<td class='dataTextInActive'><input type='text' value='0' onfocus='getLastPrice("+rowCount+");' onkeyup='getLastPrice("+rowCount+");'  name='itemunitprice' id=itemunitprice_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;'/><input type='hidden' name='purchaseprice' id=purchaseprice_"+rowCount+" value='' /></td>";
  	    var col6="<td class='dataTextInActive'><input type='text' value=''   name='sgst'  id=sgst_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
  	    var col7="<td class='dataTextInActive'><input type='text' value=''   name='cgst'  id=cgst_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
  	    var col8="<td class='dataTextInActive'><input type='text' name='issuequantity' id=issuequantity_"+rowCount+" onkeyup='getLastPrice("+rowCount+")' class='textfieldvaluesshorts' style='font-size: 14px;' onkeyup='calculate("+rowCount+")' onkeydown='calculate("+rowCount+")' required /></td>";
- 	    var col9="<td class='dataTextInActive'><input type='text' class='linetotalAmount' value='0'  name='linetotal' id=linetotal_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
- 	   	var col10="<td class='dataTextInActive'><button onClick='addRow();'>+</button></td>";
+ 	    var col9="<td class='dataTextInActive'><input type='text'  value='0'  name='priceonlygst' id=priceonlygst_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
+ 	    var col10="<td class='dataTextInActive'><input type='text' class='linetotalAmountwithoutgst' value='0'  name='totalpricewithoutgst' id=totalpricewithoutgst_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
+ 	   	var col11="<td class='dataTextInActive'><input type='text' class='linetotalAmount' value='0'  name='linetotal' id=linetotal_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
+ 	    var col12="<td class='dataTextInActive'><button onClick='addRow();'>+</button></td>";
         /* var col6="<td class='dataTextInActive'><input type='text' class='linetotalAmount' value='0'  name='linetotal' id=linetotal_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>"; */
         /* var col4="<td class='dataTextInActive'><input type='text' value='1' onclick='calculate("+rowCount+")'  onkeyup='calculate("+rowCount+")' name='feesQuantities' id=fees_quantity_"+rowCount+" /><input type='hidden'   id=hiddenfees_quantity_"+rowCount+" value='' /></td>"; */
         /* var col4="<td class='dataTextInActive'><select  onchange='calculate("+rowCount+")'  name='feesQuantities' id=fees_quantity_"+rowCount+"><option></option><option>JAN</option><option>Feb</option><option>MAR</option><option>APR</option><option>MAY</option><option>JUN</option><option>JUL</option><option>AUG</option><option>SEP</option><option>OCT</option><option>NOV</option><option>DEC</option></select><input type='hidden'   id=hiddenfees_quantity_"+rowCount+" value='' /></td>"; */
         /* var col4="<td class='dataTextInActive'><input class='feesAmount' type='text' value='0'      name='feesAmounts' id=fees_amount_"+rowCount+" /></td>"; */
-        var newRow = $("<tr class='trClass'>"+col1+col2+col3+col4+col5+col6+col7+col8+col9+col10+"</tr>");
+        var newRow = $("<tr class='trClass'>"+col1+col2+col3+col4+col5+col6+col7+col8+col9+col10+col11+col12+"</tr>");
         $(function() {
             $("#dataTable").find('tbody').append(newRow);
         });
@@ -674,8 +676,8 @@
                     $("#items_ids_"+rowCount ).val( ui.item.itemid );
                     $("#items_unitofmeasure_"+rowCount).val( ui.item.particularname );
                     $("#items_quantity_"+rowCount).val( ui.item.availablestock );
-                    $("#itemunitprice_"+rowCount).val( ui.item.unitprice );
-                    $("#salesprice_"+rowCount).val( ui.item.salesprice );
+                    $("#itemunitprice_"+rowCount).val( ui.item.salesprice );
+                    $("#purchaseprice_"+rowCount).val( ui.item.unitprice );
                     $("#sgst_"+rowCount).val( ui.item.sgst );
                     $("#cgst_"+rowCount).val( ui.item.cgst );
                 },
@@ -685,8 +687,8 @@
                     $( "#items_ids_"+rowCount ).val( ui.item.itemid );
                     $("#items_unitofmeasure_"+rowCount).val( ui.item.particularname );
                     $("#items_quantity_"+rowCount).val( ui.item.availablestock );
-                    $("#itemunitprice_"+rowCount).val( ui.item.unitprice );
-                    $("#salesprice_"+rowCount).val( ui.item.salesprice );
+                    $("#itemunitprice_"+rowCount).val( ui.item.salesprice );
+                    $("#purchaseprice_"+rowCount).val( ui.item.unitprice );
                     $("#sgst_"+rowCount).val( ui.item.sgst );
                     $("#cgst_"+rowCount).val( ui.item.cgst );
                     return true;
@@ -697,8 +699,8 @@
                     $( "#items_ids_"+rowCount ).val( ui.item.itemid );
                     $("#items_unitofmeasure_"+rowCount).val( ui.item.particularname );
                     $("#items_quantity_"+rowCount).val( ui.item.availablestock );
-                    $("#itemunitprice_"+rowCount).val( ui.item.unitprice );
-                    $("#salesprice_"+rowCount).val( ui.item.salesprice );
+                    $("#itemunitprice_"+rowCount).val( ui.item.salesprice );
+                    $("#purchaseprice_"+rowCount).val( ui.item.unitprice );
                     $("#sgst_"+rowCount).val( ui.item.sgst );
                     $("#cgst_"+rowCount).val( ui.item.cgst );
                     return true;
@@ -739,11 +741,18 @@
 	 	       	  var cgstpercentage = (cgst / 100) * unitprice;
 	 	       	
 	 	           var final1 = document.getElementById("linetotal_"+value2);
+	 	           var priceonlygst = document.getElementById("priceonlygst_"+value2);
+	 	           var totalpricewithoutgst = document.getElementById("totalpricewithoutgst_"+value2);
 	 	           
 	 	           var quantity = document.getElementById("issuequantity_"+value2).value;
 	 	           var gstprice = parseFloat(unitprice)+parseFloat(sgstpercentage)+parseFloat(cgstpercentage);
+	 	           var onlygstprice = parseFloat(sgst)+parseFloat(cgst);
+	 	           var totalpricewithoutgstvalue = parseFloat(unitprice)*quantity;
 	 	           var totalgstprice = parseFloat(gstprice)*quantity;
-	 	           final1.value=parseFloat(totalgstprice).toFixed(2);
+	 	           
+	 	          priceonlygst.value= parseFloat(onlygstprice).toFixed(1);
+     			  totalpricewithoutgst.value = parseFloat(totalpricewithoutgstvalue).toFixed(2);
+	 	          final1.value= parseFloat(totalgstprice).toFixed(2);
 	 	           
 	 	        }else{
 	 	        	$( "#dialog" ).dialog( "open" );
@@ -819,7 +828,7 @@
              $( "#dialogpaymentmethod" ).dialog({
                  autoOpen: false,
                  height: 330,
-                 width: 550,
+                 width: 570,
                  modal: true,
                  buttons: {
                      OK: function() {
@@ -829,19 +838,39 @@
                      			document.getElementById("transferdate"), document.getElementById("transferbankname"),
                      			document.getElementById("chequeno"), document.getElementById("chequedate"), document.getElementById("chequebankname"), 
                      			document.getElementById("totalcashamount"), document.getElementById("totalbanktransferamount"),
-                     			document.getElementById("totalchequetransferamount"));
+                     			document.getElementById("totalchequetransferamount"),document.getElementById("itemsGrandTotalAmount"),document.getElementById("itemsGrandTotalAmountWithoutGST"));
                          		$( this ).dialog( "close" );
                   		   }
                  }
              });
          });
          
+         $("#transferdate").datepicker({
+    			changeYear : true,
+    			changeMonth : true,
+    			dateFormat: 'dd/mm/yy',
+    			yearRange: "-50:+0"
+    		});
+    		$("#anim").change(function() {
+    			$("#transferdate").datepicker("option", "showAnim", $(this).val());
+    		});
+            
+            $("#chequedate").datepicker({
+    			changeYear : true,
+    			changeMonth : true,
+    			dateFormat: 'dd/mm/yy',
+    			yearRange: "-50:+0"
+    		});
+    		$("#anim").change(function() {
+    			$("#chequedate").datepicker("option", "showAnim", $(this).val());
+    		});
+         
 
 	});
    
 	
 	function generatebill(cashpayment,banktransfer,chequetransfer,ackno,transferdate,transferbankname,chequeno,chequedate,chequebankname,totalcashamount,totalbanktransferamount,
-			totalchequetransferamount){
+			totalchequetransferamount,itemsgrandtotalamount,itemsGrandTotalAmountWithoutGST){
     	
     	var paymentmethodbanktransfer = '';
     	var paymentmethodchequetransfer = '';
@@ -856,6 +885,21 @@
     	var totalcashamountvalue = '';
     	var totalbanktransferamountvalue = '';
     	var totalchequetransferamountvalue = '';
+    	var itemsgrandtotalamountvalue = '';
+    	var itemsTotalAmountWithoutGST='';
+    	
+    	itemsgrandtotalamountvalue = itemsgrandtotalamount.value;
+    	totalcashamountvalue = totalcashamount.value;
+    	totalbanktransferamountvalue = totalbanktransferamount.value;
+    	totalchequetransferamountvalue = totalchequetransferamount.value;
+    	
+    	var sum = (parseFloat(totalcashamountvalue)+parseFloat(totalbanktransferamountvalue)+parseFloat(totalchequetransferamountvalue)).toFixed(2);
+    	var grandtotal = parseFloat(itemsgrandtotalamountvalue);
+    	itemsTotalAmountWithoutGST = parseFloat(itemsGrandTotalAmountWithoutGST.value);
+    	
+    	if(parseFloat(sum) == parseFloat(grandtotal))
+    		
+    		{
     	
     	if(banktransfer.checked == true ){
     		paymentmethodbanktransfer = 'banktransfer';
@@ -891,14 +935,14 @@
     		chequebanknamevalue = chequebankname.value;
     	}
     	
-    	totalcashamountvalue = totalcashamount.value;
-    	totalbanktransferamountvalue = totalbanktransferamount.value;
-    	totalchequetransferamountvalue = totalchequetransferamount.value;
-    	
     	var form1 = document.getElementById("form1");
-		form1.action="/hisabaat/MessItemsMoveProcess/saveStockMove?paymentmethodbanktransfer="+paymentmethodbanktransfer+"&paymentmethodchequetransfer="+paymentmethodchequetransfer+"&paymentmethodcash="+paymentmethodcash+"&ackno="+acknovalue+"&transferdate="+transferdatevalue+"&transferbankname="+transferbanknamevalue+"&chequeno="+chequenovalue+"&chequedate="+chequedatevalue+"&chequebankname="+chequebanknamevalue+"&totalcashamount="+totalcashamountvalue+"&totalbanktransferamount="+totalbanktransferamountvalue+"&totalchequetransferamount="+totalchequetransferamountvalue+"";
+		form1.action="/hisabaat/MessItemsMoveProcess/saveStockMove?paymentmethodbanktransfer="+paymentmethodbanktransfer+"&paymentmethodchequetransfer="+paymentmethodchequetransfer+"&paymentmethodcash="+paymentmethodcash+"&ackno="+acknovalue+"&transferdate="+transferdatevalue+"&transferbankname="+transferbanknamevalue+"&chequeno="+chequenovalue+"&chequedate="+chequedatevalue+"&chequebankname="+chequebanknamevalue+"&totalcashamount="+totalcashamountvalue+"&totalbanktransferamount="+totalbanktransferamountvalue+"&totalchequetransferamount="+totalchequetransferamountvalue+"&itemsGrandTotalAmountWithoutGST="+itemsTotalAmountWithoutGST+"";
 		form1.method = "POST";
 		form1.submit();
+		
+    		}else{
+    			document.getElementById('totalerror').style.display = '';
+    		}
 		
     }
 	
@@ -1198,10 +1242,17 @@
 		        	
 		        	function calculateGrandTotal() {
 		                var sum = 0.0;
+		                var sum2 = 0.0;
 		                var column2 = $('.linetotalAmount')
 		                jQuery.each(column2,function(){
 		                    sum += parseFloat($(this).val());
 		                });
+		                
+		                var column1 = $('.linetotalAmountwithoutgst')
+		                jQuery.each(column1,function(){
+		                sum2 += parseFloat($(this).val());
+		                });
+		                $('#itemsGrandTotalAmountWithoutGST').val(sum2);
 		                
 		                $('#itemsTotalAmount').val(sum);
 		                $('#itemsGrandTotalAmount').val(sum);
@@ -1214,10 +1265,17 @@
 		                    
 		                    var sum = 0.0;
 		                    var totalSum=0.0;
+		                    var sum2 = 0.0;
 		                    var column2 = $('.linetotalAmount')
 		                    jQuery.each(column2,function(){
 		                        sum += parseFloat($(this).val());
 		                    });
+		                    
+		                    var column1 = $('.linetotalAmountwithoutgst')
+		                    jQuery.each(column1,function(){
+		                    sum2 += parseFloat($(this).val());
+		                    });
+		                    $('#itemsGrandTotalAmountWithoutGST').val(sum2);
 		                    
 		                    $('#itemsTotalAmount').val(sum);
 		                    $('#itemsGrandTotalAmount').val(sum);
@@ -1227,23 +1285,35 @@
 		                    
 		                    var sum = 0.0;
 		                    var totalSum=0.0;
+		                    var sum2 = 0.0;
 		                    var column2 = $('.linetotalAmount')
 		                    jQuery.each(column2,function(){
 		                        sum += parseFloat($(this).val());
 		                    });
 		                    
+		                    var column1 = $('.linetotalAmountwithoutgst')
+		                    jQuery.each(column1,function(){
+		                    sum2 += parseFloat($(this).val());
+		                    });
+		                    $('#itemsGrandTotalAmountWithoutGST').val(sum2);
 		                    $('#itemsTotalAmount').val(sum);
 		                    $('#itemsGrandTotalAmount').val(sum);
 		                });
 						$("#dataTable").focus(function(){
 		                    
 		                    var sum = 0.0;
+		                    var sum2 = 0.0;
 		                    var totalSum=0.0;
 		                    var column2 = $('.linetotalAmount')
 		                    jQuery.each(column2,function(){
 		                        sum += parseFloat($(this).val());
 		                    });
 		                    
+		                    var column1 = $('.linetotalAmountwithoutgst')
+		                    jQuery.each(column1,function(){
+		                    sum2 += parseFloat($(this).val());
+		                    });
+		                    $('#itemsGrandTotalAmountWithoutGST').val(sum2);
 		                    $('#itemsTotalAmount').val(sum);
 		                    $('#itemsGrandTotalAmount').val(sum);
 		                });
@@ -1270,12 +1340,20 @@
 		                   
 		                    
 		                    var sum = 0.0;
+		                    var sum2 = 0.0;
 		                    var totalSum=0.0;
 		                    var column2 = $('.linetotalAmount')
 		                    jQuery.each(column2,function(){
 		                        sum += parseFloat($(this).val());
 		                    });
 		                    totalSum=sum;
+		                    
+		                    var column1 = $('.linetotalAmountwithoutgst')
+		                    jQuery.each(column1,function(){
+		                    sum2 += parseFloat($(this).val());
+		                    });
+		                    totalSum2=sum2;
+		                    $('#itemsGrandTotalAmountWithoutGST').val(totalSum2);
 		                    
 		                    $('#itemsTotalAmount').val(totalSum);
 		                    $('#itemsGrandTotalAmount').val(totalSum);
@@ -1405,6 +1483,8 @@ for(Cookie cookie : cookies){
 								<th class="headerText">SGST Price</th>
 								<th class="headerText">CGST Price</th>
 								<th class="headerText">Issue Quantity</th>
+								<th class="headerText">Total GST</th>
+								<th class="headerText">Total (Excl. GST)</th>
 								<th class="headerText">Total (Incl. GST)</th>
 								<th class="headerText">Add</th>
 							</tr>
@@ -1415,7 +1495,7 @@ for(Cookie cookie : cookies){
 						<tfoot>
 							<tr>
 
-								<td colspan="8" align="right" style="font-weight: bold;">Total&nbsp;&nbsp;</td>
+								<td colspan="10" align="right" style="font-weight: bold;">Total&nbsp;&nbsp;</td>
 								<td align="center"><input type="text"
 									name="itemsTotalAmount" id="itemsTotalAmount" class="textfieldvaluesshorts" style="font-size: 14px;font-weight: bold;" value="0" onkeyup="calculateTransportationCharges();"/></td>
 							</tr>
@@ -1445,10 +1525,19 @@ for(Cookie cookie : cookies){
 	
 	<div id="dialogpaymentmethod" title="Payment Method">
 	
+				<table style="width: auto;height: auto;display: none;" id="totalerror">
+						<tr>
+           		 			<td>
+           		 				<p align="center" style="color: red;font-size: 10px;">Grand Total Doesn't Match</p>
+           		 			</td>	
+           		 		</tr>
+				</table>
+	
 				<table style="width: auto;height: auto;">
 					<tr>
            		 			<td>
            		 				Grand Total: &nbsp;<input type="text" name="itemsGrandTotalAmount" id="itemsGrandTotalAmount" class="textfieldvaluesshorts" style="font-size: 14px;font-weight: bold;" readonly/>
+           		 				<input type="hidden" name="itemsGrandTotalAmountWithoutGST" id="itemsGrandTotalAmountWithoutGST" class="textfieldvaluesshorts" style="font-size: 14px;font-weight: bold;" readonly/>
            		 				<br>
            		 			</td>	
            		 			
