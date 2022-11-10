@@ -467,7 +467,7 @@
 			             
 			         }
 					xmlHttp.onreadystatechange = stateChanged;
-					xmlHttp.open("GET", "/hisabaat/StudentProcess/checkContactNo?contactnumber="+selected,true);
+					xmlHttp.open("GET", "/furnitureworld/StudentProcess/checkContactNo?contactnumber="+selected,true);
 					xmlHttp.send(null);
 			}
 			

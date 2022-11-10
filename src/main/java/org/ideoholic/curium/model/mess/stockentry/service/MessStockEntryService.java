@@ -110,7 +110,6 @@ public class MessStockEntryService {
 			        													"<thead>" + 
 			        													"<tr class='headerText' >" + 
 			        													"<th>Item Name</th>" +
-			        													"<th>Batch No.</th>" +
 			        													"<th>Quantity</th>" + 
 			        													"<th>UOM</th>" + 
 			        													"<th>Sales Price</th>" +
@@ -131,11 +130,10 @@ public class MessStockEntryService {
 		        		rowBuidler.append(
 		        	                 "<tr style='border-color:#000000' border='1' cellpadding='1' cellspacing='1' >" + 
 		        			         "<td class='dataText'>"+messItems.getName()+"</td>" + 
-		        			         "<td class='dataText'>"+messStockEntry.getBatchno()+"</td>" + 
 		        			         "<td class='dataText'>"+messStockEntry.getQuantity()+"</td>" + 
-		        			         "<td class='dataText'>"+messItems.getUnitofmeasure()+"</td>" + 
+		        			         "<td class='dataText'>"+messItems.getUnitofmeasure()+"</td>" +
+		        			         "<td class='dataText'>"+messStockEntry.getBatchno()+"</td>" + 
 		        			         "<td class='dataText'>"+messStockEntry.getItemunitprice()+"</td>" +
-		        			         "<td class='dataText'>"+messStockEntry.getExternalid()+"</td>" +
 		        			         "<td class='dataText'>"+messStockEntry.getSgst()+"</td>" +
 		        			         "<td class='dataText'>"+messStockEntry.getCgst()+"</td>" +
 		        			         "<td class='dataText'>"+itemTotal+"</td>" + 

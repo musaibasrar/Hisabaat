@@ -535,7 +535,7 @@ for(Cookie cookie : cookies){
 				<thead>
 					<tr>
 						<th title="click to sort" class="headerText">Sl.No.</th>
-						<th title="click to sort" class="headerText">Batch No</th>
+						<!-- <th title="click to sort" class="headerText">Batch No</th> -->
 						<th title="click to sort" class="headerText">Item Name</th>
 						<th title="click to sort" class="headerText">Unit Price</th>
 						<th title="click to sort" class="headerText">Available Quantity</th>
@@ -548,8 +548,8 @@ for(Cookie cookie : cookies){
 					<c:forEach items="${messstockentrylist}" var="currentstocklist" varStatus="status">
 						<tr style="border-color: #000000" border="1" cellpadding="1"
 							cellspacing="1">
-						 	<td class="dataTextLeft">${status.index+1}</td>
-						 	<td class="dataTextLeft"><c:out value="${currentstocklist.batchno}" /></td>
+						 	<td class="dataTextRight">${status.index+1}</td>
+						 	<%-- <td class="dataTextLeft"><c:out value="${currentstocklist.batchno}" /></td> --%>
 						 	<c:set var="nameparts" value="${fn:split(currentstocklist.externalid, '_')}" />
 						 	<td class="dataTextLeft"><c:out value="${nameparts[0]}" /></td>
 						 	<td class="dataTextRight"><c:out value="${currentstocklist.itemunitprice}" /></td>

@@ -183,7 +183,7 @@ public class MessItemsService {
 				String[] itemsName = request.getParameterValues("itemsname");
 				String[] itemsQuantity = request.getParameterValues("itemsquantity");
 				String[] unitPrice = request.getParameterValues("price");
-				String[] batchNo = request.getParameterValues("batchno");
+				//String[] batchNo = request.getParameterValues("batchno");
 				String[] lineTotal = request.getParameterValues("linetotal");
 				String sup = request.getParameter("supplierid");
 				String[] supplieridledgerid = sup.split(":");
@@ -379,7 +379,15 @@ public class MessItemsService {
 
 		public void getBatchStock() {
 			List<MessStockEntry> messStockEntryList = new MessItemsDAO().getItemsStockEntry();
-			request.setAttribute("messstockentrylist", messStockEntryList);
+			List<MessStockEntry> messStockEntryListItems = new ArrayList<MessStockEntry>();
+			
+			for (MessStockEntry messStockEntry : messStockEntryList) {
+				MessItems messItem = new MessItemsDAO().getItem(messStockEntry.getItemid());
+				messStockEntry.setExternalid(messItem.getName());
+				messStockEntryListItems.add(messStockEntry);
+			}
+			
+			request.setAttribute("messstockentrylist", messStockEntryListItems);
 			
 		}
 

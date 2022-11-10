@@ -7,18 +7,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
-
 import org.ideoholic.curium.model.account.dto.VoucherEntrytransactions;
-import org.ideoholic.curium.model.degreedetails.dto.Degreedetails;
 import org.ideoholic.curium.model.mess.item.dto.MessItems;
 import org.ideoholic.curium.model.mess.stockentry.dto.MessStockEntry;
-import org.ideoholic.curium.model.mess.stockmove.dto.Bill;
 import org.ideoholic.curium.model.mess.stockmove.dto.MessStockMove;
-import org.ideoholic.curium.model.parents.dto.Parents;
-import org.ideoholic.curium.model.pudetails.dto.Pudetails;
-import org.ideoholic.curium.model.std.dto.Classhierarchy;
 import org.ideoholic.curium.model.student.dto.Student;
-import org.ideoholic.curium.model.student.dto.Studentfeesstructure;
 import org.ideoholic.curium.util.HibernateUtil;
 import org.ideoholic.curium.util.Session;
 import org.ideoholic.curium.util.Session.Transaction;
@@ -237,10 +230,10 @@ return result;
 
 
 
-	public List<Bill> getStockMoveDetails(int offset,
+	public List<MessStockMove> getStockMoveDetails(int offset,
 			int noOfRecords, int branchId) {
 		
-        List<Bill> results = new ArrayList<Bill>();
+        List<MessStockMove> results = new ArrayList<MessStockMove>();
         
         try {
                 transaction = session.beginTransaction();

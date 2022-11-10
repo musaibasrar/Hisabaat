@@ -942,7 +942,8 @@ for(Cookie cookie : cookies){
 						  <td class="dataText" style="width: 10%;"><input type="text"  style="background-color: #E3EFFF;border-style: none;color: #4B6A84;text-align: center;" name="transactiondate_${stockmovelist.id}" value="<fmt:formatDate value="${stockmovelist.transactiondate}" pattern="dd/MM/yyyy"/>" readonly></td>
 							<c:set var="itemparts" value="${fn:split(stockmovelist.externalid, '_')}" />
 						  <td class="dataText" style="text-align: center"><c:out value="${itemparts[1]}" /></td>
-						  <td class="dataText" style="text-align: left">${stockmovelist.issuedto}</td>
+						  <c:set var="issuedtoparts" value="${fn:split(stockmovelist.issuedto, '_')}" />
+						  <td class="dataText" style="text-align: left">${issuedtoparts[0]}</td>
 						  <td class="dataText" style="text-align: left"><c:out value="${itemparts[0]}" /></td>
 						  <td class="dataText" style="text-align: right"><c:out value="${stockmovelist.quantity}" /></td>
 						  <td class="dataText" style="text-align: right">

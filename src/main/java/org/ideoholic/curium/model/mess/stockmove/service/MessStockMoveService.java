@@ -19,14 +19,10 @@ import org.ideoholic.curium.model.mess.item.dao.MessItemsDAO;
 import org.ideoholic.curium.model.mess.item.dto.MessItems;
 import org.ideoholic.curium.model.mess.item.service.MessItemsService;
 import org.ideoholic.curium.model.mess.stockentry.dao.MessStockEntryDAO;
-import org.ideoholic.curium.model.mess.stockentry.dto.MessStockAvailability;
 import org.ideoholic.curium.model.mess.stockentry.dto.MessStockEntry;
 import org.ideoholic.curium.model.mess.stockmove.dao.MessStockMoveDAO;
 import org.ideoholic.curium.model.mess.stockmove.dto.MessStockItemDetails;
 import org.ideoholic.curium.model.mess.stockmove.dto.MessStockMove;
-import org.ideoholic.curium.model.mess.stockmove.dto.Bill;
-import org.ideoholic.curium.model.parents.dto.Parents;
-import org.ideoholic.curium.model.student.dao.studentDetailsDAO;
 import org.ideoholic.curium.util.DataUtil;
 import org.ideoholic.curium.util.DateUtil;
 import org.ideoholic.curium.util.NumberToWord;
@@ -60,7 +56,7 @@ public class MessStockMoveService {
 			String[] itemsIds = request.getParameterValues("itemsids");
 			String[] issuequantity = request.getParameterValues("issuequantity");
 			String[] itemunitprice = request.getParameterValues("itemunitprice");
-			String[] purchaseprice = request.getParameterValues("salesprice");
+			String[] purchaseprice = request.getParameterValues("purchaseprice");
 			String[] custDetails = request.getParameter("issuedto").split("_");
 			BigDecimal totalValue = BigDecimal.ZERO;
 			BigDecimal PurchasePricetotalValue = BigDecimal.ZERO;
@@ -82,8 +78,24 @@ public class MessStockMoveService {
 			String totalCashAmount = request.getParameter("totalcashamount");
 			String totalBankTransferAmount = request.getParameter("totalbanktransferamount");
 			String totalChequetransferAmount = request.getParameter("totalchequetransferamount");
+			String itemsGrandTotalAmountWOGST = request.getParameter("itemsGrandTotalAmountWithoutGST");
+			BigDecimal itemsGrandTotalAmountWithoutGST = BigDecimal.ZERO;
+			BigDecimal totalCashAmountBD = new BigDecimal(totalCashAmount);
+			BigDecimal totalBankTransferAmountBD = new BigDecimal(totalBankTransferAmount);
+			BigDecimal totalChequetransferAmountBD = new BigDecimal(totalChequetransferAmount);
+			itemsGrandTotalAmountWithoutGST = new BigDecimal(itemsGrandTotalAmountWOGST);
+			BigDecimal difference = (totalCashAmountBD.add(totalBankTransferAmountBD).add(totalChequetransferAmountBD)).subtract(itemsGrandTotalAmountWithoutGST);
 			
-			totalValue = totalValue.add(new BigDecimal(totalCashAmount).add(new BigDecimal(totalBankTransferAmount)).add(new BigDecimal(totalChequetransferAmount)));
+			if(totalCashAmountBD.compareTo(totalBankTransferAmountBD)>0 && totalCashAmountBD.compareTo(totalChequetransferAmountBD)>0) {
+				totalCashAmountBD = totalCashAmountBD.subtract(difference);
+			}else if(totalBankTransferAmountBD.compareTo(totalChequetransferAmountBD) > 0) {
+				totalBankTransferAmountBD = totalBankTransferAmountBD.subtract(difference);
+			}else {
+				totalChequetransferAmountBD = totalChequetransferAmountBD.subtract(difference);
+			}
+			 	
+				totalValue = totalValue.add(totalCashAmountBD.add(totalBankTransferAmountBD).add(totalChequetransferAmountBD));
+				
 			
 				if("banktransfer".equalsIgnoreCase(paymentmethodbanktransfer)) {
 					ackNoVoucherNarration = " acknowledgement number: "+ackNo+" , Amount transfer date: "+transferDate;
@@ -162,8 +174,8 @@ public class MessStockMoveService {
 						
 						transactionsIncomeCash.setDraccountid(drStockLedgerIdIncome);
 						transactionsIncomeCash.setCraccountid(crStockLedgerIdIncome);
-						transactionsIncomeCash.setDramount(new BigDecimal(totalCashAmount));
-						transactionsIncomeCash.setCramount(new BigDecimal(totalCashAmount));
+						transactionsIncomeCash.setDramount(totalCashAmountBD);
+						transactionsIncomeCash.setCramount(totalCashAmountBD);
 						transactionsIncomeCash.setVouchertype(4);
 						transactionsIncomeCash.setTransactiondate(DateUtil.indiandateParser(request.getParameter("transactiondate")));
 						transactionsIncomeCash.setEntrydate(DateUtil.todaysDate());
@@ -173,10 +185,10 @@ public class MessStockMoveService {
 						transactionsIncomeCash.setBranchid(Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 						transactionsIncomeCash.setUserid(Integer.parseInt(httpSession.getAttribute(USERID).toString()));
 						
-						BigDecimal drAmountReceiptIncome = new BigDecimal(totalCashAmount);
+						BigDecimal drAmountReceiptIncome = totalCashAmountBD;
 						updateDrAccountIncomeCash ="update Accountdetailsbalance set currentbalance=currentbalance+"+drAmountReceiptIncome+" where accountdetailsid="+drStockLedgerIdIncome;
 	
-						BigDecimal crAmountReceiptIncome = new BigDecimal(totalCashAmount);
+						BigDecimal crAmountReceiptIncome = totalCashAmountBD;
 						updateCrAccountIncomeCash ="update Accountdetailsbalance set currentbalance=currentbalance+"+crAmountReceiptIncome+" where accountdetailsid="+crStockLedgerIdIncome;
 					
 					}
@@ -189,8 +201,8 @@ public class MessStockMoveService {
 						
 						transactionsIncomeBankTransfer.setDraccountid(drStockLedgerIdIncome);
 						transactionsIncomeBankTransfer.setCraccountid(crStockLedgerIdIncome);
-						transactionsIncomeBankTransfer.setDramount(new BigDecimal(totalBankTransferAmount));
-						transactionsIncomeBankTransfer.setCramount(new BigDecimal(totalBankTransferAmount));
+						transactionsIncomeBankTransfer.setDramount(totalBankTransferAmountBD);
+						transactionsIncomeBankTransfer.setCramount(totalBankTransferAmountBD);
 						transactionsIncomeBankTransfer.setVouchertype(4);
 						transactionsIncomeBankTransfer.setTransactiondate(DateUtil.indiandateParser(request.getParameter("transactiondate")));
 						transactionsIncomeBankTransfer.setEntrydate(DateUtil.todaysDate());
@@ -200,10 +212,10 @@ public class MessStockMoveService {
 						transactionsIncomeBankTransfer.setBranchid(Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 						transactionsIncomeBankTransfer.setUserid(Integer.parseInt(httpSession.getAttribute(USERID).toString()));
 						
-						BigDecimal drAmountReceiptIncome = new BigDecimal(totalBankTransferAmount);
+						BigDecimal drAmountReceiptIncome = totalBankTransferAmountBD;
 						updateDrAccountIncomeBankTransfer ="update Accountdetailsbalance set currentbalance=currentbalance+"+drAmountReceiptIncome+" where accountdetailsid="+drStockLedgerIdIncome;
 	
-						BigDecimal crAmountReceiptIncome = new BigDecimal(totalBankTransferAmount);
+						BigDecimal crAmountReceiptIncome = totalBankTransferAmountBD;
 						updateCrAccountIncomeBankTransfer ="update Accountdetailsbalance set currentbalance=currentbalance+"+crAmountReceiptIncome+" where accountdetailsid="+crStockLedgerIdIncome;
 					
 					}
@@ -215,8 +227,8 @@ public class MessStockMoveService {
 						
 						transactionsIncomeCheque.setDraccountid(drStockLedgerIdIncome);
 						transactionsIncomeCheque.setCraccountid(crStockLedgerIdIncome);
-						transactionsIncomeCheque.setDramount(new BigDecimal(totalChequetransferAmount));
-						transactionsIncomeCheque.setCramount(new BigDecimal(totalChequetransferAmount));
+						transactionsIncomeCheque.setDramount(totalChequetransferAmountBD);
+						transactionsIncomeCheque.setCramount(totalChequetransferAmountBD);
 						transactionsIncomeCheque.setVouchertype(4);
 						transactionsIncomeCheque.setTransactiondate(DateUtil.indiandateParser(request.getParameter("transactiondate")));
 						transactionsIncomeCheque.setEntrydate(DateUtil.todaysDate());
@@ -226,10 +238,10 @@ public class MessStockMoveService {
 						transactionsIncomeCheque.setBranchid(Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 						transactionsIncomeCheque.setUserid(Integer.parseInt(httpSession.getAttribute(USERID).toString()));
 						
-						BigDecimal drAmountReceiptIncome = new BigDecimal(totalChequetransferAmount);
+						BigDecimal drAmountReceiptIncome = totalChequetransferAmountBD;
 						updateDrAccountIncomeCheque ="update Accountdetailsbalance set currentbalance=currentbalance+"+drAmountReceiptIncome+" where accountdetailsid="+drStockLedgerIdIncome;
 	
-						BigDecimal crAmountReceiptIncome = new BigDecimal(totalChequetransferAmount);
+						BigDecimal crAmountReceiptIncome = totalChequetransferAmountBD;
 						updateCrAccountIncomeCheque ="update Accountdetailsbalance set currentbalance=currentbalance+"+crAmountReceiptIncome+" where accountdetailsid="+crStockLedgerIdIncome;
 					
 					}
@@ -470,7 +482,7 @@ public class MessStockMoveService {
 
 	public boolean viewStockMoveDetails() {
 		
-		List<Bill> messStockMoveList = new ArrayList<Bill>();
+		List<MessStockMove> messStockMoveList = new ArrayList<MessStockMove>();
 		boolean result = false;
 		
 		 if(httpSession.getAttribute(BRANCHID)!=null){
