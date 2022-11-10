@@ -137,8 +137,8 @@ public class MessStockMoveService {
 			}
 				
 					//Pass J.V. : credit the assets & debit the Expenses
-					int drStockLedgerIdExpense = getLedgerAccountId("itemaccountidexpense");
-					int crStockLedgerId = getLedgerAccountId("itemaccountid");
+					int drStockLedgerIdExpense = getLedgerAccountId("itemaccountidexpense"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
+					int crStockLedgerId = getLedgerAccountId("itemaccountid"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 					
 					VoucherEntrytransactions transactions = new VoucherEntrytransactions();
 					
@@ -176,7 +176,7 @@ public class MessStockMoveService {
 					if("cashpayment".equalsIgnoreCase(paymentmethodcash)) {
 					
 						int drStockLedgerIdIncome = getLedgerAccountId(httpSession.getAttribute("username").toString()+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
-						int crStockLedgerIdIncome = getLedgerAccountId("incomeaccount");
+						int crStockLedgerIdIncome = getLedgerAccountId("incomeaccount"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 						
 						transactionsIncomeCash.setDraccountid(drStockLedgerIdIncome);
 						transactionsIncomeCash.setCraccountid(crStockLedgerIdIncome);
@@ -203,7 +203,7 @@ public class MessStockMoveService {
 					if("banktransfer".equalsIgnoreCase(paymentmethodbanktransfer)) {
 						
 						int drStockLedgerIdIncome = getLedgerAccountId(transferBankname+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
-						int crStockLedgerIdIncome = getLedgerAccountId("incomeaccount");
+						int crStockLedgerIdIncome = getLedgerAccountId("incomeaccount"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 						
 						transactionsIncomeBankTransfer.setDraccountid(drStockLedgerIdIncome);
 						transactionsIncomeBankTransfer.setCraccountid(crStockLedgerIdIncome);
@@ -229,7 +229,7 @@ public class MessStockMoveService {
 					if("chequetransfer".equalsIgnoreCase(paymentmethodchequetransfer)) {
 						
 						int drStockLedgerIdIncome = getLedgerAccountId(chequeBankname+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
-						int crStockLedgerIdIncome = getLedgerAccountId("incomeaccount");
+						int crStockLedgerIdIncome = getLedgerAccountId("incomeaccount"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 						
 						transactionsIncomeCheque.setDraccountid(drStockLedgerIdIncome);
 						transactionsIncomeCheque.setCraccountid(crStockLedgerIdIncome);
@@ -381,8 +381,8 @@ public class MessStockMoveService {
 						}
 					
 						//Pass J.V. : credit the assets & debit the Expenses
-						int drStockLedgerIdExpense = getLedgerAccountId("itemaccountidexpense");
-						int crStockLedgerId = getLedgerAccountId("itemaccountid");
+						int drStockLedgerIdExpense = getLedgerAccountId("itemaccountidexpense"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
+						int crStockLedgerId = getLedgerAccountId("itemaccountid"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 						
 						VoucherEntrytransactions transactions = new VoucherEntrytransactions();
 						
@@ -535,8 +535,8 @@ public class MessStockMoveService {
 		
 		//Pass J.V. : Debit the assets & credit the Expenses
 		
-		int drStockLedgerId = getLedgerAccountId("itemaccountid");
-		int crStockLedgerIdExpense = getLedgerAccountId("itemaccountidexpense");
+		int drStockLedgerId = getLedgerAccountId("itemaccountid"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
+		int crStockLedgerIdExpense = getLedgerAccountId("itemaccountidexpense"+Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 		
 		VoucherEntrytransactions transactions = new VoucherEntrytransactions();
 		
