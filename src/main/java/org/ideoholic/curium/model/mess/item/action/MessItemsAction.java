@@ -53,6 +53,7 @@ public class MessItemsAction {
 	@PostMapping("/generateStockIssuanceReport")
 	public String generateStockIssuanceReport() {
 		new MessItemsService(request, response).generateStockIssuanceReport();
+		new StudentService(request, response).viewAllStudentsParents();
 		return "stockissuancereport";
 	}
 

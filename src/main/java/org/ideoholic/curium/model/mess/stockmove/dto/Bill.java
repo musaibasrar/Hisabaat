@@ -14,7 +14,7 @@ public class Bill implements java.io.Serializable {
 	private Integer id;
 	private String itemname;
 	private String batchno;
-	private Integer quantity;
+	private Float quantity;
 	private String uom;
 	private Float salesprice;
 	private Float sgst;
@@ -28,7 +28,7 @@ public class Bill implements java.io.Serializable {
 	public Bill() {
 	}
 	
-	public Bill(String itemname, String batchno, Integer quantity, String uom, Float salesprice, Float sgst, Float cgst, Float totaltax, Float totalbill, Float totalbillinctax
+	public Bill(String itemname, String batchno, Float quantity, String uom, Float salesprice, Float sgst, Float cgst, Float totaltax, Float totalbill, Float totalbillinctax
 			, String totalbillinctaxwords) {
 		this.itemname = itemname;
 		this.batchno = batchno;
@@ -67,11 +67,11 @@ public class Bill implements java.io.Serializable {
 		this.batchno = batchno;
 	}
 
-	public Integer getQuantity() {
+	public Float getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(Integer quantity) {
+	public void setQuantity(Float quantity) {
 		this.quantity = quantity;
 	}
 

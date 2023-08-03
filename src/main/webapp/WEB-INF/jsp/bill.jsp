@@ -1,3 +1,15 @@
+
+<%-- 
+    Document   : ${name}
+    Created on : ${date}, ${time}
+    Author     : ${user}
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -115,30 +127,29 @@ table, tbody {
 		<tr style="height: 79pt">
 			<td
 				style="width: 555pt; border-top-style: solid; border-top-width: 2pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="11"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p>
+				colspan="11">
 				<p class="s1"
-					style="padding-left: 18pt; text-indent: 0pt; line-height: 22pt; text-align: left;">
-					Company <span class="s2">Company Name </span><span class="s3">TAX
-						INVOICE</span>
+					style="padding-left: 18pt; text-indent: 0pt; line-height: 22pt; text-align: center;">
+					<span class="s3">TAX INVOICE</span>
+				<br>
 				</p>
+				
 				<p class="s1"
-					style="padding-left: 31pt; text-indent: 0pt; line-height: 16pt; text-align: left;">
-					Logo <span class="s4">Company Address</span>
+					style="padding-left: 31pt; text-indent: 0pt; line-height: 16pt; text-align: center;">
+					<span class="s4">Hisabaat</span>
 				</p></td>
 		</tr>
 		<tr style="height: 19pt">
 			<td
-				style="width: 210pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
+				style="width: 30%; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
 				colspan="3" rowspan="4"><p class="s5"
 					style="padding-top: 2pt; padding-left: 2pt; text-indent: 0pt; text-align: left;">Name
-					&amp; Address Of Buyer</p></td>
+					&amp; Address Of Buyer<br>${billdetailscustomername}<br>${billdetailscustomercontact}<br>${billdetailscustomeraddress}</p></td>
 			<td
-				style="width: 165pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
+				style="width: 30%; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
 				colspan="4" rowspan="4"><p class="s5"
 					style="padding-left: 4pt; text-indent: 0pt; text-align: left;">Shipped
-					To</p></td>
+					To <br>${billdetailscustomername}<br>${billdetailscustomercontact}<br>${billdetailscustomeraddress}</p></p></td>
 			<td
 				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
 				colspan="2"><p class="s6"
@@ -146,7 +157,7 @@ table, tbody {
 					No.</p></td>
 			<td
 				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
+				colspan="2"><p style="text-indent: 0pt; text-align: left;">&nbsp;&nbsp;${billno}
 					<br />
 				</p></td>
 		</tr>
@@ -158,7 +169,7 @@ table, tbody {
 					Of Issue</p></td>
 			<td
 				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
+				colspan="2"><p style="text-indent: 0pt; text-align: left;"> &nbsp;&nbsp;${billdetailstransactiondate}
 					<br />
 				</p></td>
 		</tr>
@@ -170,43 +181,22 @@ table, tbody {
 					No.</p></td>
 			<td
 				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
+				colspan="2"><p style="text-indent: 0pt; text-align: left;">&nbsp;&nbsp;123456798
 					<br />
 				</p></td>
 		</tr>
-		<tr style="height: 19pt">
+		 <tr style="height: 19pt">
 			<td
 				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
 				colspan="2"><p class="s5"
 					style="padding-top: 5pt; padding-left: 15pt; text-indent: 0pt; text-align: left;">State</p></td>
 			<td
 				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
+				colspan="2"><p style="text-indent: 0pt; text-align: left;">&nbsp;&nbsp;Karnataka
 					<br />
 				</p></td>
 		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 210pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="3"><p class="s5"
-					style="padding-top: 4pt; padding-left: 2pt; text-indent: 0pt; text-align: left;">Buyer
-					GSTIN No. :</p></td>
-			<td
-				style="width: 165pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="4"><p class="s5"
-					style="padding-top: 4pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">Place
-					Of Supply :</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 5pt; padding-left: 15pt; text-indent: 0pt; text-align: left;">Electronic
-					Ref No.</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
+		
 		<tr style="height: 39pt">
 			<td
 				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
@@ -214,1174 +204,167 @@ table, tbody {
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 1pt; text-indent: 0pt; text-align: left;">Sr.</p>
-				<p class="s6"
-					style="padding-top: 4pt; padding-left: 1pt; text-indent: 0pt; text-align: left;">No.</p></td>
+					style="padding-left: 1pt; text-indent: 0pt; text-align: center;">Sr. No.</p>
+				</td>
 			<td
 				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 42pt; text-indent: 0pt; text-align: left;">Description
-					Of Goods</p></td>
+					style="padding-left: 42pt; text-indent: 0pt; text-align: center;">Description</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 1pt; text-indent: 0pt; text-align: left;">HSN
-					/ SAC</p></td>
+					style="padding-left: 1pt; text-indent: 0pt; text-align: center;">Batch No.</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 6pt; text-indent: 0pt; text-align: left;">Quantity</p></td>
+					style="padding-left: 6pt; text-indent: 0pt; text-align: center;">Quantity</p></td>
 			<td
 				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 5pt; text-indent: 0pt; text-align: left;">Units</p></td>
+					style="padding-left: 5pt; text-indent: 0pt; text-align: center;">Units</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 13pt; text-indent: 0pt; text-align: left;">Rate</p></td>
+					style="padding-left: 13pt; text-indent: 0pt; text-align: center;">Rate</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 13pt; padding-right: 5pt; text-indent: -4pt; line-height: 148%; text-align: left;">Taxable
+					style="padding-left: 13pt; padding-right: 5pt; text-indent: -4pt; line-height: 148%; text-align: center;">Taxable
 					Value</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+					<td
+				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 4pt; text-indent: 0pt; text-align: left;">CGST</p>
-				<p class="s6"
-					style="padding-top: 4pt; padding-left: 7pt; text-indent: 0pt; text-align: left;">Rate</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+					style="padding-left: 13pt; padding-right: 5pt; text-indent: -4pt; line-height: 148%; text-align: center;">SGST</p></td>
+		<td
+				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 20pt; text-indent: 0pt; text-align: left;">CGST</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+					style="padding-left: 13pt; padding-right: 5pt; text-indent: -4pt; line-height: 148%; text-align: center;">CGST</p></td>
+					<td
+				style="width: 90pt;border-top-style: solid;border-top-width: 1pt;border-left-style: solid;border-left-width: 1pt;border-bottom-style: solid;border-bottom-width: 1pt;border-right-style: solid;border-right-width: 2pt;" colspan="2"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 3pt; text-indent: 0pt; text-align: left;">SGST</p>
-				<p class="s6"
-					style="padding-top: 4pt; padding-left: 6pt; text-indent: 0pt; text-align: left;">Rate</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p>
-				<p class="s6"
-					style="padding-left: 17pt; text-indent: 0pt; text-align: left;">SGST</p></td>
+					style="padding-left: 0pt; text-indent: 0pt; text-align: center;">Total Incl. Tax</p></td>
 		</tr>
+		
+		<c:forEach items="${billdetails}" var="billdetails" varStatus="status">
+		
 		<tr style="height: 19pt">
 			<td
 				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${status.index+1}
 				</p></td>
 			<td
 				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.itemname}
 				</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.batchno}
 				</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.quantity}
 				</p></td>
 			<td
 				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.uom}
 				</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.salesprice}
 				</p></td>
 			<td
 				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.totalbill}
 				</p></td>
 			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.sgst}
 				</p></td>
 			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.cgst}
 				</p></td>
 			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
+				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; "><p
+					style="text-indent: 0pt; text-align: center;">
 					<br />
+					${billdetails.totalbillinctax}
+					 <%-- <c:set var="itemTotal" value="${itemTotal + salesrate * billdetails.quantity}" />
+							<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${salesrate * billdetails.quantity}" /> --%>
 				</p></td>
 			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
+				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p></td>
 		</tr>
+		</c:forEach>
+		
 		<tr style="height: 19pt">
 			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 15pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 150pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
+				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt;"
 				colspan="2"><p class="s5"
-					style="padding-top: 5pt; padding-left: 4pt; text-indent: 0pt; text-align: left;">Transporter
-					Name</p></td>
+					style="padding-top: 4pt; padding-left: 3pt; text-indent: 0pt; text-align: left;"></p></td>
 			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 75pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 6pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">Freight</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 5pt; padding-left: 4pt; text-indent: 0pt; text-align: left;">Vehicle
-					No.</p></td>
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 75pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 6pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">Insurance</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 4pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">L.R.No.</p></td>
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 75pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 6pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">Packing
-					Forwarding</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 60pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 5pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">P.O.
-					No. &amp; Dt.</p></td>
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
-					style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 75pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 6pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">Sub
-					Total</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-			<td
-				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">
-					<br />
-				</p></td>
-		</tr>
-		<tr style="height: 19pt">
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 2pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
-				colspan="2"><p class="s5"
-					style="padding-top: 4pt; padding-left: 3pt; text-indent: 0pt; text-align: left;">Delivery
-					Challan No. &amp; Dt.</p></td>
-			<td
-				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+				style="width: 105pt; border-top-style: solid; border-top-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p></td>
 			<td
 				style="width: 165pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
 				colspan="4"><p class="s6"
-					style="padding-top: 5pt; padding-left: 79pt; text-indent: 0pt; text-align: left;">Total
+					style="padding-top: 5pt; padding-right: 10pt; text-indent: 0pt; text-align: right;font-size: 12pt;">Total
 					Invoice Value</p></td>
 			<td
 				style="width: 180pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="4"><p style="text-indent: 0pt; text-align: left;">
-					<br />
+				colspan="4"><p class="s6"
+					style="padding-top: 5pt; padding-right: 10pt; text-indent: 0pt; text-align: left;font-size: 12pt;">
+					&nbsp;&nbsp;${billtotalwithgst}
 				</p></td>
 		</tr>
 		<tr style="height: 59pt">
@@ -1396,12 +379,13 @@ table, tbody {
 					<br />
 				</p>
 				<p class="s6"
-					style="padding-left: 40pt; text-indent: 0pt; text-align: left;">Total
+					style="text-indent: 0pt; text-align: right;font-size: 12pt;padding-right: 10pt;">Total
 					Invoice Value(In Words)</p></td>
 			<td
-				style="width: 180pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="4"><p style="text-indent: 0pt; text-align: left;">
+				style="width: 1820pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
+				colspan="4"><p class="s6" style="text-indent: 0pt; text-align: left;font-size: 12pt;">
 					<br />
+					&nbsp;&nbsp;${billdetailstotaltotal}
 				</p></td>
 		</tr>
 		<tr style="height: 99pt">

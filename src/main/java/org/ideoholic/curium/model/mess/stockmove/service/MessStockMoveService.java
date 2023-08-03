@@ -19,14 +19,11 @@ import org.ideoholic.curium.model.mess.item.dao.MessItemsDAO;
 import org.ideoholic.curium.model.mess.item.dto.MessItems;
 import org.ideoholic.curium.model.mess.item.service.MessItemsService;
 import org.ideoholic.curium.model.mess.stockentry.dao.MessStockEntryDAO;
-import org.ideoholic.curium.model.mess.stockentry.dto.MessStockAvailability;
 import org.ideoholic.curium.model.mess.stockentry.dto.MessStockEntry;
 import org.ideoholic.curium.model.mess.stockmove.dao.MessStockMoveDAO;
+import org.ideoholic.curium.model.mess.stockmove.dto.Bill;
 import org.ideoholic.curium.model.mess.stockmove.dto.MessStockItemDetails;
 import org.ideoholic.curium.model.mess.stockmove.dto.MessStockMove;
-import org.ideoholic.curium.model.mess.stockmove.dto.Bill;
-import org.ideoholic.curium.model.parents.dto.Parents;
-import org.ideoholic.curium.model.student.dao.studentDetailsDAO;
 import org.ideoholic.curium.util.DataUtil;
 import org.ideoholic.curium.util.DateUtil;
 import org.ideoholic.curium.util.NumberToWord;
@@ -62,7 +59,13 @@ public class MessStockMoveService {
 			String[] itemunitprice = request.getParameterValues("itemunitprice");
 			String[] purchaseprice = request.getParameterValues("purchaseprice");
 			String[] custDetails = request.getParameter("issuedto").split("_");
-			BigDecimal totalValue = BigDecimal.ZERO;
+			String[] sgst = request.getParameterValues("sgst");
+			String[] cgst = request.getParameterValues("cgst");
+			String[] uom = request.getParameterValues("itemsunitofmeasure");
+			String[] batchno = request.getParameterValues("batchno");
+			String[] totalexclgst = request.getParameterValues("totalpricewithoutgst");
+			String[] totalinclgst = request.getParameterValues("linetotal");
+			//BigDecimal totalValue = BigDecimal.ZERO;
 			BigDecimal PurchasePricetotalValue = BigDecimal.ZERO;
 			
 			
@@ -82,7 +85,7 @@ public class MessStockMoveService {
 			String totalCashAmount = request.getParameter("totalcashamount");
 			String totalBankTransferAmount = request.getParameter("totalbanktransferamount");
 			String totalChequetransferAmount = request.getParameter("totalchequetransferamount");
-			
+			int itemsGrandTotalAmountWithGST = Integer.parseInt(request.getParameter("itemsTotalAmount"));
 			String itemsGrandTotalAmountWOGST = request.getParameter("itemsGrandTotalAmountWithoutGST");
 			BigDecimal itemsGrandTotalAmountWithoutGST = BigDecimal.ZERO;
 			BigDecimal totalCashAmountBD = new BigDecimal(totalCashAmount);
@@ -100,7 +103,7 @@ public class MessStockMoveService {
 						totalChequetransferAmountBD = totalChequetransferAmountBD.subtract(difference);
 				}
 							 	
-			totalValue = totalValue.add(totalCashAmountBD.add(totalBankTransferAmountBD).add(totalChequetransferAmountBD));
+			//totalValue = totalValue.add(totalCashAmountBD.add(totalBankTransferAmountBD).add(totalChequetransferAmountBD));
 								
 				
 				if("banktransfer".equalsIgnoreCase(paymentmethodbanktransfer)) {
@@ -112,6 +115,39 @@ public class MessStockMoveService {
 				}
 					
 			//End Payment Details
+				
+				//BILL DETAILS
+				
+				List<Bill> billList = new ArrayList<Bill>();
+				
+				
+				for(int i=0; i < StockEntryIds.length ; i++){
+
+					Bill bill = new Bill();
+					
+					Float sgstpercentage = (Float.parseFloat(sgst[i]) / 100) * Float.parseFloat(itemunitprice[i]);
+					Float cgstpercentage = (Float.parseFloat(cgst[i]) / 100) * Float.parseFloat(itemunitprice[i]);
+					
+					bill.setItemname(itemsName[i]);
+					bill.setBatchno(batchno[i]);
+					bill.setQuantity(Float.parseFloat(issuequantity[i]));
+					bill.setUom(uom[i]);
+					bill.setSalesprice(Float.parseFloat(itemunitprice[i]));
+					bill.setSgst(Float.parseFloat(sgst[i]));
+					bill.setCgst(Float.parseFloat(cgst[i]));
+					
+					//Float totalAmountWithoutGST = (Float.parseFloat(issuequantity[i])) * (Float.parseFloat(itemunitprice[i]));
+					bill.setTotalbill(Float.parseFloat(totalexclgst[i]));
+					
+			        // Calculate the total amount including GST
+					//Float totalAmountWithGST = totalAmountWithoutGST + sgstpercentage + cgstpercentage;
+					bill.setTotalbillinctax(Float.parseFloat(totalinclgst[i]));
+					
+					billList.add(bill);
+				
+			}
+				
+				//END BILL DETAILS
 			
 			List<MessStockMove> messStockMovesList = new ArrayList<MessStockMove>();
 			
@@ -155,10 +191,10 @@ public class MessStockMoveService {
 					transactions.setBranchid(Integer.parseInt(httpSession.getAttribute(BRANCHID).toString()));
 					transactions.setUserid(Integer.parseInt(httpSession.getAttribute(USERID).toString()));
 					
-					BigDecimal drAmountReceipt = totalValue;
+					int drAmountReceipt = itemsGrandTotalAmountWithGST;
 					String updateDrAccount="update Accountdetailsbalance set currentbalance=currentbalance+"+drAmountReceipt+" where accountdetailsid="+drStockLedgerIdExpense;
 
-					BigDecimal crAmountReceipt = totalValue;
+					int crAmountReceipt = itemsGrandTotalAmountWithGST;
 					String updateCrAccount="update Accountdetailsbalance set currentbalance=currentbalance-"+crAmountReceipt+" where accountdetailsid="+crStockLedgerId;
 					
 					
@@ -258,7 +294,10 @@ public class MessStockMoveService {
 					
 						if(result) {
 							
-							request.setAttribute("billdetails", messStockMovesList);
+							//request.setAttribute("billdetails", messStockMovesList);
+							//request.setAttribute("billtotalwithgst", totalValue.floatValue());
+							request.setAttribute("billtotalwithgst", itemsGrandTotalAmountWithGST);
+							request.setAttribute("billdetails", billList);
 							request.setAttribute("billdetailstransactiondate", request.getParameter("transactiondate"));
 							request.setAttribute("billdetailscustomername", custDetails[0]);
 							request.setAttribute("billdetailscustomercontact", custDetails[1]);
@@ -267,8 +306,8 @@ public class MessStockMoveService {
 							
 							NumberToWord toWord = new NumberToWord();
 							String grandTotal = "";
-							if(totalValue.compareTo(BigDecimal.ZERO) != 0){
-								grandTotal = toWord.convert(totalValue.intValue());
+							if(itemsGrandTotalAmountWithGST != 0){
+								grandTotal = toWord.convert(itemsGrandTotalAmountWithGST);
 							}
 							
 							StringBuffer res = new StringBuffer();
