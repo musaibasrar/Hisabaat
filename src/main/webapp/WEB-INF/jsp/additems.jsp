@@ -632,11 +632,29 @@ for(Cookie cookie : cookies){
 									<td><label> <select name="unitofmeasure"
 									id="unitofmeasure" style="font-size: 14px;" class="dropdownlist" required>
 										<option selected></option>
-										<option>Kilogram</option>
-										<option>Litre</option>
-										<option>Piece</option>
-										<option>Box</option>
-										<option>Packet</option>
+										 <option value="Ampoule">Ampoule</option>
+                                         <option value="Aerosol">Aaerosol</option>
+                                         <option value="Caplets">Caplets</option>
+                                         <option value="Chewable">Chewable</option>
+                                         <option value="Cream">Cream</option>
+                                         <option value="Capsules">Capsules</option>
+                                         <option value="Drops">Drops</option>
+                                         <option value="Foam">Foam</option>
+                                         <option value="Gel">Gel</option>
+                                         <option value="Inhaler">Inhaler</option>
+                                         <option value="Injection" >Injection</option>
+                                         <option value="Lotion">Lotion</option>
+                                         <option value="Lozenges">Lozenges</option>
+                                         <option value="Ointment">Ointment</option>
+                                         <option value="Pill(s)">Pill(s)</option>
+                                         <option value="Powder">Powder</option>
+                                         <option value="Strips" >Strips</option>
+                                         <option value="Suppositories">Suppositories</option>
+                                         <option value="Syrup">Syrup</option>
+                                         <option value="Soap">Soap</option>
+                                         <option value="Solution">Solution</option>
+                                         <option value="Spray">Spray</option>
+                                         <option value="Suspension">Suspension</option>
 										
 								</select></label></td>
 								

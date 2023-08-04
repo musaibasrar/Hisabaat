@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -535,8 +537,9 @@ for(Cookie cookie : cookies){
 				<thead>
 					<tr>
 						<th title="click to sort" class="headerText">Sl.No.</th>
-						<th title="click to sort" class="headerText">Batch No</th>
 						<th title="click to sort" class="headerText">Item Name</th>
+						<th title="click to sort" class="headerText">Batch No</th>
+						<th title="click to sort" class="headerText">Date of Expiry</th>
 						<th title="click to sort" class="headerText">Unit Price</th>
 						<th title="click to sort" class="headerText">Available Quantity</th>
 						<th title="click to sort" class="headerText">Total Price</th>
@@ -549,9 +552,46 @@ for(Cookie cookie : cookies){
 						<tr style="border-color: #000000" border="1" cellpadding="1"
 							cellspacing="1">
 						 	<td class="dataTextLeft">${status.index+1}</td>
-						 	<td class="dataTextLeft"><c:out value="${currentstocklist.batchno}" /></td>
 						 	<c:set var="nameparts" value="${fn:split(currentstocklist.externalid, '_')}" />
 						 	<td class="dataTextLeft"><c:out value="${nameparts[0]}" /></td>
+						 	<td class="dataTextLeft"><c:out value="${currentstocklist.batchno}" /></td>
+						 	<td class="dataTextLeft">
+						 	
+						 				<c:set var="dateparts" value="${fn:split(nameparts[2], '/')}" />	
+										<c:set var="datepartsformat" value="${dateparts[2]}-${dateparts[1]}-${dateparts[0]}" />
+
+
+												<%
+												  // Get the current date
+												  Date currentDate = new Date();
+												
+												  // Define the date format you want
+												  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+												
+												  // Format the date
+												  String formattedDate = sdf.format(currentDate);
+												%>
+												
+												<c:set var="currentDateFormat" value="<%= formattedDate %>" />
+												<c:set var="dateFormatPattern" value="yyyy-MM-dd" />
+												
+												<fmt:parseDate var="date1" value="${currentDateFormat}" pattern="${dateFormatPattern}" />
+												<fmt:parseDate var="date2" value="${datepartsformat}" pattern="${dateFormatPattern}" />
+												
+												<c:set var="timeDifference" value="${date2.time - date1.time}" />
+												
+												<fmt:formatNumber var="daysDifference" value="${timeDifference / (1000 * 60 * 60 * 24)}" />
+
+										<c:if test="${daysDifference < 91}">
+										  <span style="color: red;">
+										    <c:out value="${nameparts[2]}" />
+										  </span>
+										</c:if>
+										<c:if test="${daysDifference >= 91}">
+										  <c:out value="${nameparts[2]}" />
+										</c:if>
+										
+						 	</td>
 						 	<td class="dataTextRight"><c:out value="${currentstocklist.itemunitprice}" /></td>
 						 	<td class="dataTextRight"><c:out value="${currentstocklist.availablequantity}" /></td>
 						 	<td class="dataTextRight">

@@ -178,6 +178,9 @@ public class MessItemsService {
 				String[] itemsQuantity = request.getParameterValues("itemsquantity");
 				String[] salesPrice = request.getParameterValues("price");
 				String[] batchNo = request.getParameterValues("batchno");
+				String[] dateofexpiry = request.getParameterValues("dateofexpiry");
+				String[] monthofexpiry = request.getParameterValues("monthofexpiry");
+				String[] yearofexpiry = request.getParameterValues("yearofexpiry");
 				String[] lineTotal = request.getParameterValues("linetotal");
 				String sup = request.getParameter("supplierid");
 				String[] supplieridledgerid = sup.split(":");
@@ -207,7 +210,7 @@ public class MessItemsService {
 						MessStockEntry messStockEntry = new MessStockEntry();
 						
 						messStockEntry.setItemid(Integer.parseInt(itemIds[i]));
-						messStockEntry.setExternalid(itemsName[i]+"_"+salesPrice[i]);
+						messStockEntry.setExternalid(itemsName[i]+"_"+salesPrice[i]+"_"+dateofexpiry[i]+"/"+monthofexpiry[i]+"/"+yearofexpiry[i]);
 						messStockEntry.setBatchno(batchNo[i]);
 						messStockEntry.setReceiveddate(DateUtil.indiandateParser(request.getParameter("itementrydate")));
 						messStockEntry.setItemunitprice(Float.parseFloat(purchasePrice[i]));
