@@ -19,8 +19,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Batch Stock</title>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-<link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+<link rel="stylesheet" href="/asianagencies/css/datePicker/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/asianagencies/css/datePicker/demos.css">
 <style type="text/css">
 .divCSS {
 	overflow: scroll;
@@ -403,17 +403,17 @@
 }
 
 </style>
-<script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/jquery-1.7.1.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
 <script type="text/javascript" language="javascript"
-	src="/hisabaat/js/dataTable/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
+	src="/asianagencies/js/dataTable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/ui/jquery.ui.core.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.tabs.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/ui/jquery.ui.tabs.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery.ui.accordion.js"></script>
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
 		$('#myTable').dataTable({
@@ -466,13 +466,13 @@
 		});
 	});
 </script>
-<script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datetimepicker_css.js"></script>
 <script type="text/javascript">
 
 	
 	function printRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/MessItemsProcess/printBatchStockAvailability";
+		form1.action = "/asianagencies/MessItemsProcess/printBatchStockAvailability";
 		form1.method = "POST";
 		form1.submit();
 	}
@@ -508,7 +508,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/asianagencies/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -557,10 +557,12 @@ for(Cookie cookie : cookies){
 						 	<td class="dataTextLeft"><c:out value="${currentstocklist.batchno}" /></td>
 						 	<td class="dataTextLeft">
 						 	
-						 				<c:set var="dateparts" value="${fn:split(nameparts[2], '/')}" />	
-										<c:set var="datepartsformat" value="${dateparts[2]}-${dateparts[1]}-${dateparts[0]}" />
-
-
+						 				<c:set var="dateparts" value="${fn:split(nameparts[2], '/')}" />
+						 					 
+										 <c:set var="datepartsformat" value="${dateparts[2]}-${dateparts[1]}-${dateparts[0]}" />
+											<c:set var="invaliddateString" value="--" />
+											
+											<c:if test="${datepartsformat != invaliddateString}">
 												<%
 												  // Get the current date
 												  Date currentDate = new Date();
@@ -578,18 +580,23 @@ for(Cookie cookie : cookies){
 												<fmt:parseDate var="date1" value="${currentDateFormat}" pattern="${dateFormatPattern}" />
 												<fmt:parseDate var="date2" value="${datepartsformat}" pattern="${dateFormatPattern}" />
 												
-												<c:set var="timeDifference" value="${date2.time - date1.time}" />
 												
-												<fmt:formatNumber var="daysDifference" value="${timeDifference / (1000 * 60 * 60 * 24)}" />
-
-										<c:if test="${daysDifference < 91}">
-										  <span style="color: red;">
-										    <c:out value="${nameparts[2]}" />
-										  </span>
-										</c:if>
-										<c:if test="${daysDifference >= 91}">
-										  <c:out value="${nameparts[2]}" />
-										</c:if>
+												       <c:set var="timeDifference" value="${date2.time - date1.time}" />
+													   <fmt:parseNumber value="${ timeDifference / (1000*60*60*24) }" integerOnly="true" var="daysDifference" scope="page"/>
+																
+																	<c:choose>
+																        <c:when test="${daysDifference gt 90}">
+																            <c:out value="${nameparts[2]}" />
+																        </c:when>
+																        <c:otherwise>
+																            <span style="color: red;">
+																		    <c:out value="${nameparts[2]}" />
+																		  </span>
+																        </c:otherwise>
+																    </c:choose>
+    
+												 </c:if>
+												
 										
 						 	</td>
 						 	<td class="dataTextRight"><c:out value="${currentstocklist.itemunitprice}" /></td>

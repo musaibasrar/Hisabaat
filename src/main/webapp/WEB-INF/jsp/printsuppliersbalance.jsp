@@ -212,10 +212,10 @@
 		<table width="100%" style="border-collapse: collapse;">
 			<tr>
 				<td align="center">
-				<img src="/hisabaat/images/logo.jpg" width="150" height="80"/>
+				<img src="/asianagencies/images/logo.jpg" width="150" height="80"/>
 				</td>
 				<td class="dataTextBoldCenter" style="width: 100%">
-				Curium<br><br>
+				Asian Agencies<br><br>
 				<label class="addressLine">Suppliers Balance Report</label><br>
 				</td>
 			</tr>

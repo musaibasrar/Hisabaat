@@ -150,7 +150,7 @@
         <script type="text/javascript">
             function logout(){
                 var form1=document.getElementById("form1");
-                form1.action="/hisabaat/UserProcess/logout";
+                form1.action="/asianagencies/UserProcess/logout";
                 form1.submit();
             }
 
@@ -160,7 +160,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/asianagencies/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -179,8 +179,8 @@ for(Cookie cookie : cookies){
                     <td valign="top" background="/images/h_bg.jpg">
                         <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
                             <!-- <tr>
-                               <td width="234" ><div align="center"><img src="/hisabaat/images/logo.png" width="200" height="64" /></div></td> 
-                                <td width="700" ><div align="center"><img src="/hisabaat/images/SMS.png" width="391" height="50" /></div></td>
+                               <td width="234" ><div align="center"><img src="/asianagencies/images/logo.png" width="200" height="64" /></div></td> 
+                                <td width="700" ><div align="center"><img src="/asianagencies/images/SMS.png" width="391" height="50" /></div></td>
                                
                             </tr> -->
                             <tr>
@@ -188,38 +188,38 @@ for(Cookie cookie : cookies){
                             </tr>
                             <tr>
                             				<td width="10"></td>
-                                          	<td align="left"><img src="/hisabaat/images/hisabaatheader.png" /></td>  
+                                          	<td align="left"><img src="/asianagencies/images/asianagenciesheader.png" /></td>  
                                           	<!-- <td><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td> -->
-                            				<td width="40" ><div align="center" ><a target="leftFrame" href="/hisabaat/left"><img src="/hisabaat/images/house_home.png" width="35" height="35" alt="Fees Collection" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
-                            				<td><a target="leftFrame" href="/hisabaat/left" style="color:white;font-size: 11px;font-family: arial;">Home</a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
+                            				<td width="40" ><div align="center" ><a target="leftFrame" href="/asianagencies/left"><img src="/asianagencies/images/house_home.png" width="35" height="35" alt="Fees Collection" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
+                            				<td><a target="leftFrame" href="/asianagencies/left" style="color:white;font-size: 11px;font-family: arial;">Home</a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                             				
-                                            <td width="40" ><div align="center" ><a target="mainFrame" href="/hisabaat/FeesProcess/feesCollect"><img   src="/hisabaat/images/feescollectw.png" width="40" height="40" alt="Fees Collection" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
+                                            <td width="40" ><div align="center" ><a target="mainFrame" href="/asianagencies/FeesProcess/feesCollect"><img   src="/asianagencies/images/feescollectw.png" width="40" height="40" alt="Fees Collection" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                             				<td><label style="color:white;font-size: 11px;font-family: arial;">Fees <br>Collect</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                             				
-                            				<td width="40"><a target="mainFrame" href="/hisabaat/AccountProcess/createVoucher"><div align="center" align="center"><img  alt="Create Voucher" src="/hisabaat/images/voucherw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
+                            				<td width="40"><a target="mainFrame" href="/asianagencies/AccountProcess/createVoucher"><div align="center" align="center"><img  alt="Create Voucher" src="/asianagencies/images/voucherw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
                                             <td><label style="color:white;font-size: 12px;">Create <br>Voucher</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                                             
-                                            <!-- <td width="40"><a target="mainFrame" href="/hisabaat/feesCollectionDetails"><div align="center" align="center"><img  alt="Fees Details" src="/hisabaat/images/feescoll.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
+                                            <!-- <td width="40"><a target="mainFrame" href="/asianagencies/feesCollectionDetails"><div align="center" align="center"><img  alt="Fees Details" src="/asianagencies/images/feescoll.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
                                             <td><label style="color:white;font-size: 12px;">Fees <br>Details</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td> -->
                                             
-                                            <td width="40" ><div align="center" ><a target="mainFrame" href="/hisabaat/StudentProcess/addNew"><img   src="/hisabaat/images/Usersw.png" width="30" height="30" alt="Add New Student" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
+                                            <td width="40" ><div align="center" ><a target="mainFrame" href="/asianagencies/StudentProcess/addNew"><img   src="/asianagencies/images/Usersw.png" width="30" height="30" alt="Add New Student" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                             				<td><label style="color:white;font-size: 12px;">Add <br>New</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                            					
-                           					<td width="40"><a target="leftFrame" href="/hisabaat/leftsettings"><div align="center" align="center"><img  alt="Settings" src="/hisabaat/images/ssettingsw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
+                           					<td width="40"><a target="leftFrame" href="/asianagencies/leftsettings"><div align="center" align="center"><img  alt="Settings" src="/asianagencies/images/ssettingsw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
                                             <td><label style="color:white;font-size: 12px;">Master<br> Settings</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                                             
-                                            <td width="40"><a target="mainFrame" href="/hisabaat/AdminProcess/viewAllExpenses"><div align="center" align="center"><img  alt="Admin Exp" src="/hisabaat/images/adexpw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
+                                            <td width="40"><a target="mainFrame" href="/asianagencies/AdminProcess/viewAllExpenses"><div align="center" align="center"><img  alt="Admin Exp" src="/asianagencies/images/adexpw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
                                             <td><label style="color:white;font-size: 12px;">Admin<br> Expense</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                                             
-                                            <td width="40" ><div align="center" ><a target="mainFrame" href="/hisabaat/sendsms"><img   src="/hisabaat/images/sendsmsw.png" width="30" height="30" alt="Send SMS" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
+                                            <td width="40" ><div align="center" ><a target="mainFrame" href="/asianagencies/sendsms"><img   src="/asianagencies/images/sendsmsw.png" width="30" height="30" alt="Send SMS" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                                 			<td><label style="color:white;font-size: 12px;">Send <br>Message</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                                             
-                                            <td width="40"><a target="mainFrame" href="/hisabaat/StudentProcess/viewAllStudentsWithParents"><div align="center" align="center"><img  alt="View All Students" src="/hisabaat/images/allusersw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
+                                            <td width="40"><a target="mainFrame" href="/asianagencies/StudentProcess/viewAllStudentsWithParents"><div align="center" align="center"><img  alt="View All Students" src="/asianagencies/images/allusersw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
                                             <td><label style="color:white;font-size: 12px;">View <br>All</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                                             
-                                            <td width="40"><a target="mainFrame" href="/hisabaat/UserProcess/dashBoard"><div align="center" align="center"><img  alt="Dash Board" src="/hisabaat/images/dashboardw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
+                                            <td width="40"><a target="mainFrame" href="/asianagencies/UserProcess/dashBoard"><div align="center" align="center"><img  alt="Dash Board" src="/asianagencies/images/dashboardw.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
                                             <td><label style="color:white;font-size: 12px;">Dash<br> Board</label><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
-                                            <td width="40" ><div align="center" ><a target="_parent" href="/hisabaat/UserProcess/logout"><img   src="/hisabaat/images/logoutw.png" width="30" height="30" alt="Log Out" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
+                                            <td width="40" ><div align="center" ><a target="_parent" href="/asianagencies/UserProcess/logout"><img   src="/asianagencies/images/logoutw.png" width="30" height="30" alt="Log Out" /></a><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                                             <td width="60" ><div align="center" ><div class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></td>
                             </tr>
                             <tr>

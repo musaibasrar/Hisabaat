@@ -17,8 +17,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Issue Stock</title>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-<link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+<link rel="stylesheet" href="/asianagencies/css/datePicker/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/asianagencies/css/datePicker/demos.css">
 
 <style type="text/css">
 .divCSS {
@@ -445,21 +445,21 @@
 }
 
 </style>
-<script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/jquery-1.7.1.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
 <script type="text/javascript" language="javascript"
-	src="/hisabaat/js/dataTable/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
+	src="/asianagencies/js/dataTable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/ui/jquery.ui.core.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.tabs.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/ui/jquery.ui.tabs.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery.ui.accordion.js"></script>
 	
-	<script src="/hisabaat/js/bootstrap.min.js"></script>
-<link href="/hisabaat/css/select2.min.css" rel="stylesheet" />
-<script src="/hisabaat/js/select2.min.js"></script>
+	<script src="/asianagencies/js/bootstrap.min.js"></script>
+<link href="/asianagencies/css/select2.min.css" rel="stylesheet" />
+<script src="/asianagencies/js/select2.min.js"></script>
 
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
@@ -554,14 +554,14 @@
 		});
 	});
 </script>
-<script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datetimepicker_css.js"></script>
 <script type="text/javascript">
 
 	function saveissueentry() {
 		var form1 = document.getElementById("form1");
 		
 		if(form1.checkValidity()) {
-			form1.action = "/hisabaat/MessItemsMoveProcess/saveStockMove";
+			form1.action = "/asianagencies/MessItemsMoveProcess/saveStockMove";
 			form1.method = "POST";
 			form1.submit();
 		}
@@ -571,7 +571,7 @@
 	
 	function cancelRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/MessItemsMoveProcess/cancelStockMove";
+		form1.action = "/asianagencies/MessItemsMoveProcess/cancelStockMove";
 		form1.method = "POST";
 		form1.submit();
 
@@ -579,21 +579,21 @@
 	
 	function printRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/AdminProcess/printVoucher";
+		form1.action = "/asianagencies/AdminProcess/printVoucher";
 		form1.method = "POST";
 		form1.submit();
 	}
 	
 	function approveRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/AdminProcess/approveVoucher";
+		form1.action = "/asianagencies/AdminProcess/approveVoucher";
 		form1.method = "POST";
 		form1.submit();
 	}
 	
 	function rejectRecords() {
 		var form1 = document.getElementById("form1");
-		form1.action = "/hisabaat/AdminProcess/rejectVoucher";
+		form1.action = "/asianagencies/AdminProcess/rejectVoucher";
 		form1.method = "POST";
 		form1.submit();
 	}
@@ -655,7 +655,7 @@
  	    var col6="<td class='dataTextInActive'><input type='text' value='0' onfocus='getLastPrice("+rowCount+");' onkeyup='getLastPrice("+rowCount+");'  name='itemunitprice' id=itemunitprice_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;'/><input type='hidden' name='purchaseprice' id=purchaseprice_"+rowCount+" value='' /></td>";
  	    var col7="<td class='dataTextInActive'><input type='text' value=''   name='sgst'  id=sgst_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
  	    var col8="<td class='dataTextInActive'><input type='text' value=''   name='cgst'  id=cgst_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' readonly/></td>";
- 	    var col9="<td class='dataTextInActive'><input type='text' name='issuequantity' id=issuequantity_"+rowCount+" onkeyup='getLastPrice("+rowCount+")' class='textfieldvaluesshorts' style='font-size: 14px;' onkeyup='calculate("+rowCount+")' onkeydown='calculate("+rowCount+")' required /></td>";
+ 	    var col9="<td class='dataTextInActive'><input type='text' name='issuequantity' id=issuequantity_"+rowCount+" class='textfieldvaluesshorts' style='font-size: 14px;' onkeyup='calculate("+rowCount+")' required /></td>";
  	    var col10="<td class='dataTextInActive'><input type='text'  value='0'  name='priceonlygst' id=priceonlygst_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
  	    var col11="<td class='dataTextInActive'><input type='text' class='linetotalAmountwithoutgst' value='0'  name='totalpricewithoutgst' id=totalpricewithoutgst_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
  	   	var col12="<td class='dataTextInActive'><input type='text' class='linetotalAmount' value='0'  name='linetotal' id=linetotal_"+rowCount+" style='font-size: 14px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #5d7e9b;border-right-color: #5d7e9b;border-bottom-color: #5d7e9b;border-left-color: #5d7e9b;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;width: 80px;height: 25px;border-radius: 5px;background-color: white;' readonly/></td>";
@@ -940,7 +940,7 @@
     	}
     	
     	var form1 = document.getElementById("form1");
-		form1.action="/hisabaat/MessItemsMoveProcess/saveStockMove?paymentmethodbanktransfer="+paymentmethodbanktransfer+"&paymentmethodchequetransfer="+paymentmethodchequetransfer+"&paymentmethodcash="+paymentmethodcash+"&ackno="+acknovalue+"&transferdate="+transferdatevalue+"&transferbankname="+transferbanknamevalue+"&chequeno="+chequenovalue+"&chequedate="+chequedatevalue+"&chequebankname="+chequebanknamevalue+"&totalcashamount="+totalcashamountvalue+"&totalbanktransferamount="+totalbanktransferamountvalue+"&totalchequetransferamount="+totalchequetransferamountvalue+"&itemsGrandTotalAmountWithoutGST="+itemsTotalAmountWithoutGST+"";
+		form1.action="/asianagencies/MessItemsMoveProcess/saveStockMove?paymentmethodbanktransfer="+paymentmethodbanktransfer+"&paymentmethodchequetransfer="+paymentmethodchequetransfer+"&paymentmethodcash="+paymentmethodcash+"&ackno="+acknovalue+"&transferdate="+transferdatevalue+"&transferbankname="+transferbanknamevalue+"&chequeno="+chequenovalue+"&chequedate="+chequedatevalue+"&chequebankname="+chequebanknamevalue+"&totalcashamount="+totalcashamountvalue+"&totalbanktransferamount="+totalbanktransferamountvalue+"&totalchequetransferamount="+totalchequetransferamountvalue+"&itemsGrandTotalAmountWithoutGST="+itemsTotalAmountWithoutGST+"";
 		form1.method = "POST";
 		form1.submit();
 		
@@ -1064,7 +1064,7 @@
  	             
  	         }
  			xmlHttp.onreadystatechange = stateChanged;
- 			xmlHttp.open("GET", "/hisabaat/MessItemsMoveProcess/getCustomerLastPrice?customerName="+customerName+"&itemid="+itemId+"",true);
+ 			xmlHttp.open("GET", "/asianagencies/MessItemsMoveProcess/getCustomerLastPrice?customerName="+customerName+"&itemid="+itemId+"",true);
  			xmlHttp.send(null);
  	}
  	
@@ -1375,7 +1375,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/asianagencies/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -1454,7 +1454,7 @@ for(Cookie cookie : cookies){
 										        	
 										        		<option style="color: black;" value="${student.student.name}_${student.student.classstudying}_${student.student.remarks}">${student.student.name}&nbsp;&nbsp;/&nbsp;&nbsp;${student.student.classstudying}</option>
 										        	</c:forEach>
-										        </select>&nbsp;&nbsp;<a target="mainFrame" href="/hisabaat/StudentProcess/addNew">New Customer</a>
+										        </select>&nbsp;&nbsp;<a target="mainFrame" href="/asianagencies/StudentProcess/addNew">New Customer</a>
 									 	</div>
 								</div>
 							</td>
@@ -1487,7 +1487,7 @@ for(Cookie cookie : cookies){
 								<th class="headerText">Unit Price</th>
 								<th class="headerText">SGST Price</th>
 								<th class="headerText">CGST Price</th>
-								<th class="headerText">Issue Quantity</th>
+								<th class="headerText">Quantity</th>
 								<th class="headerText">Total GST</th>
 								<th class="headerText">Total (Excl. GST)</th>
 								<th class="headerText">Total (Incl. GST)</th>

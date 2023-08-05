@@ -131,13 +131,21 @@ table, tbody {
 				<p class="s1"
 					style="padding-left: 18pt; text-indent: 0pt; line-height: 22pt; text-align: center;">
 					<span class="s3">TAX INVOICE</span>
-				<br>
+				<br/>
 				</p>
 				
 				<p class="s1"
 					style="padding-left: 31pt; text-indent: 0pt; line-height: 16pt; text-align: center;">
-					<span class="s4">Hisabaat</span>
+					<span class="s4">Asian Agencies</span>
+				</p>
+				<br/>
+				
+				<p class="s1"
+					style="padding-left: 31pt; text-indent: 0pt; line-height: 16pt; text-align: center;">
+					<span class="s6">New CMC Complex, Railway Station Road, Bidar - 585401</span>
 				</p></td>
+				
+				</td>
 		</tr>
 		<tr style="height: 19pt">
 			<td

@@ -220,10 +220,10 @@
 		<table width="100%" style="border-collapse: collapse;">
 			<tr>
 				<td align="center">
-				<img src="/hisabaat/images/logo.jpg" width="150" height="80"/>
+				<img src="/asianagencies/images/logo.jpg" width="150" height="80"/>
 				</td>
 				<td class="dataTextBoldCenter" style="width: 100%">
-				Curium<br><br>
+				Asian Agencies<br><br>
 				<label class="addressLine">Supplier Payment Report</label><br>
 				<label class="addressLineTwo">From: ${fromdateselected}</label><label class="addressLineTwo">&nbsp;&nbsp;&nbsp;To: ${todateselected}</label><br>
 				<label class="addressLineTwo">&nbsp;&nbsp;&nbsp;Supplier Name: ${ledgername}</label>

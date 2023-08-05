@@ -18,8 +18,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Purchase Entry</title>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-<link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+<link rel="stylesheet" href="/asianagencies/css/datePicker/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/asianagencies/css/datePicker/demos.css">
 <style type="text/css">
 .divCSS {
 	overflow: scroll;
@@ -428,17 +428,17 @@
 }
 
 </style>
-<script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/jquery-1.7.1.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
 <script type="text/javascript" language="javascript"
-	src="/hisabaat/js/dataTable/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
+	src="/asianagencies/js/dataTable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/ui/jquery.ui.core.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.tabs.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datePicker/ui/jquery.ui.tabs.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.accordion.js"></script>
+	src="/asianagencies/js/datePicker/ui/jquery.ui.accordion.js"></script>
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
 		$('#myTable').dataTable({
@@ -534,7 +534,7 @@
 		});
 	});
 </script>
-<script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="/asianagencies/js/datetimepicker_css.js"></script>
 <script type="text/javascript">
 	
 	function saveInventory() {
@@ -542,7 +542,7 @@
 		var form1 = document.getElementById("form1");
 		
 		if(form1.checkValidity()) {
-			form1.action = "/hisabaat/MessItemsProcess/savePurchase";
+			form1.action = "/asianagencies/MessItemsProcess/savePurchase";
 			form1.method = "POST";
 			form1.submit();
 		}
@@ -552,7 +552,7 @@
 	function cancelPurchase() {
 			
 				var form1 = document.getElementById("form1");
-				form1.action = "/hisabaat/MessItemsProcess/cancelPurchase";
+				form1.action = "/asianagencies/MessItemsProcess/cancelPurchase";
 				form1.method = "POST";
 				form1.submit();
 			
@@ -722,6 +722,7 @@
         $('#itemsGrandTotalAmountWithoutGST').val(sum2);
         
         $('#itemsTotalAmount').val(sum);
+        $('#itemsGrandTotalAmount').val(sum);
     }
 	
 	$(document).ready(function() {
@@ -804,6 +805,7 @@
             $('#itemsGrandTotalAmountWithoutGST').val(totalSum2);
             
             $('#itemsTotalAmount').val(totalSum);
+            $('#itemsGrandTotalAmount').val(totalSum);
             	calculateGrandTotal();
             //$('#grandTotalAmount').val(0);
         }catch(e) {
@@ -899,7 +901,7 @@
         	             
         	         }
         			xmlHttp.onreadystatechange = stateChangedSSGroup;
-        			xmlHttp.open("GET", "/hisabaat/stockentry/mrvDetails?invoicedetailsid="+invoicedetailsid+"&entrydate="+date+"&supplierreferenceno="+supplierrefno+"&suppliername="+name+"&invoicetotal="+invoicetotal+"",true);
+        			xmlHttp.open("GET", "/asianagencies/stockentry/mrvDetails?invoicedetailsid="+invoicedetailsid+"&entrydate="+date+"&supplierreferenceno="+supplierrefno+"&suppliername="+name+"&invoicetotal="+invoicetotal+"",true);
         			xmlHttp.send(null);
 
         		
@@ -976,7 +978,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/asianagencies/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -1178,7 +1180,7 @@ for(Cookie cookie : cookies){
 				<div align="center">
              <%--For displaying Previous link except for the 1st page --%>
                 <c:if test="${currentPage != 1}">
-                    <td><a style="color: #4B6A84;font-size: 12px" href="/hisabaat/MessItemsProcess/purchaseItems?page=${currentPage - 1}">Previous</a></td>
+                    <td><a style="color: #4B6A84;font-size: 12px" href="/asianagencies/MessItemsProcess/purchaseItems?page=${currentPage - 1}">Previous</a></td>
                 </c:if>
 
                 <%--For displaying Page numbers.
@@ -1191,7 +1193,7 @@ for(Cookie cookie : cookies){
                                     <td style="color: #1D599B;font-weight:bolder;font-size: 20px ">${i}</td>
                                 </c:when>
                                 <c:otherwise>
-                                    <td style="color: black;font-weight:bold;font-size: 15px "><a style="color: #4B6A84" href="/hisabaat/MessItemsProcess/purchaseItems?page=${i}">${i}</a></td>
+                                    <td style="color: black;font-weight:bold;font-size: 15px "><a style="color: #4B6A84" href="/asianagencies/MessItemsProcess/purchaseItems?page=${i}">${i}</a></td>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
@@ -1200,7 +1202,7 @@ for(Cookie cookie : cookies){
 
                 <%--For displaying Next link --%>
                 <c:if test="${currentPage lt noOfPages}">
-                    <td ><a style="color: #4B6A84;font-size: 12px" href="/hisabaat/MessItemsProcess/purchaseItems?page=${currentPage + 1}">Next</a></td>
+                    <td ><a style="color: #4B6A84;font-size: 12px" href="/asianagencies/MessItemsProcess/purchaseItems?page=${currentPage + 1}">Next</a></td>
                 </c:if>
                     </div>
 

@@ -11,14 +11,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CURIUM</title>
-        <link rel="stylesheet" href="/hisabaat/css/font-awesome.css">
+        <title>Hisabaat</title>
+        <link rel="stylesheet" href="/asianagencies/css/font-awesome.css">
 </head>
 <%
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/asianagencies/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -38,7 +38,7 @@ for(Cookie cookie : cookies){
           			<td>
           			<p style="text-transform: uppercase;color: #143160;font-weight: bolder;">Welcome, <label style="color: #93051f;"><c:out default="" value="${username}"/> </label></p><br><br>
           			
-          			<p style="color: #143160;font-weight: bolder;">You can navigate your way through CURIUM using: </p><br><br>
+          			<p style="color: #143160;font-weight: bolder;">You can navigate your way through Hisabaat using: </p><br><br>
 					
 					
 					<i class="fa fa-arrow-up" style="font-size:28px;color:#1b5605;"></i>&nbsp;&nbsp;<label style="color: #1b5605;">The shortcuts at the top</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
