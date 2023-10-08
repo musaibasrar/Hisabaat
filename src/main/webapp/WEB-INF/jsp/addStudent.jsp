@@ -20,22 +20,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Add Customer</title>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-<link rel="stylesheet" href="/hisabaat/css/validation/jquery.ketchup.css">
+<link rel="stylesheet" href="/ruyaa/css/datePicker/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/ruyaa/css/validation/jquery.ketchup.css">
 
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
-<script src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.core.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.widget.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery.ui.tabs.js"></script>
-<script src="/hisabaat/js/datePicker/ui/sliderAccess.js"></script>
-<script src="/hisabaat/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
-<script src="/hisabaat/js/validation/jquery.ketchup.all.min.js"></script>
+	src="/ruyaa/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
+<script src="/ruyaa/js/datePicker/jquery-1.7.1.js"></script>
+<script src="/ruyaa/js/datePicker/ui/jquery.ui.core.js"></script>
+<script src="/ruyaa/js/datePicker/ui/jquery.ui.widget.js"></script>
+<script src="/ruyaa/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+<script src="/ruyaa/js/datePicker/ui/jquery.ui.tabs.js"></script>
+<script src="/ruyaa/js/datePicker/ui/sliderAccess.js"></script>
+<script src="/ruyaa/js/datePicker/ui/jquery-ui-timepicker-addon.js"></script>
+<script src="/ruyaa/js/validation/jquery.ketchup.all.min.js"></script>
 <script type="text/javascript"
-	src="/hisabaat/js/datePicker/ui/jquery.ui.button.js"></script>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+	src="/ruyaa/js/datePicker/ui/jquery.ui.button.js"></script>
+<link rel="stylesheet" href="/ruyaa/css/datePicker/demos.css">
 
 
 
@@ -273,10 +273,10 @@
 
 
 
-<script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="/ruyaa/js/datetimepicker_css.js"></script>
 
-<script src="/hisabaat/JavaScript/actb.js"></script>
-<script src="/hisabaat/JavaScript/common.js"></script>
+<script src="/ruyaa/JavaScript/actb.js"></script>
+<script src="/ruyaa/JavaScript/common.js"></script>
 
 
 
@@ -467,7 +467,7 @@
 			             
 			         }
 					xmlHttp.onreadystatechange = stateChanged;
-					xmlHttp.open("GET", "/hisabaat/StudentProcess/checkContactNo?contactnumber="+selected,true);
+					xmlHttp.open("GET", "/ruyaa/StudentProcess/checkContactNo?contactnumber="+selected,true);
 					xmlHttp.send(null);
 			}
 			
@@ -568,7 +568,7 @@
 	//allow access only if session exists
 	String user = null;
 	if (session.getAttribute("userAuth") == null) {
-		response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+		response.sendRedirect("/ruyaa/UserProcess/sessionTimeOut");
 	} else
 		user = (String) session.getAttribute("userAuth");
 	String userName = null;
@@ -1971,7 +1971,7 @@
 								var form1 = document.getElementById("form1");
 								if(form1.checkValidity()) {
 									form1.savestudent.disabled = true;
-									form1.action = "/hisabaat/StudentProcess/AddStudent";
+									form1.action = "/ruyaa/StudentProcess/AddStudent";
 									form1.submit();
 								  }
 							}
@@ -1980,14 +1980,14 @@
 								var form1 = document.getElementById("form1");
 								if(form1.checkValidity()) {
 									form1.savestudent.disabled = true;
-									form1.action = "/hisabaat/StudentProcess/generateBill";
+									form1.action = "/ruyaa/StudentProcess/generateBill";
 									form1.submit();
 								  }
 							}
 
 							function Cancel() {
 								var form1 = document.getElementById("form1");
-								form1.action = "/hisabaat/StudentProcess/viewAll";
+								form1.action = "/ruyaa/StudentProcess/viewAll";
 								form1.submit();
 							}
 

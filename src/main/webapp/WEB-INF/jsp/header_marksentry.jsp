@@ -14,10 +14,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <meta name="Description" content = "School,School Management Software,SchoolCRM,">
         <meta name="Keywords" content = "School,School Management Software,SchoolCRM,">
-        <link rel="stylesheet" href="/hisabaat/css/bootstrap.min.css">
-        <script src="/hisabaat/js/jquery.min.js"></script>
-        <script src="/hisabaat/js/bootstrap.min.js"></script>
-        <script src="/hisabaat/js/popper.min.js"></script>
+        <link rel="stylesheet" href="/ruyaa/css/bootstrap.min.css">
+        <script src="/ruyaa/js/jquery.min.js"></script>
+        <script src="/ruyaa/js/bootstrap.min.js"></script>
+        <script src="/ruyaa/js/popper.min.js"></script>
      
         <style type="text/css">
             
@@ -92,7 +92,7 @@ text-decoration: underline;
         <script type="text/javascript">
             function logout(){
                 var form1=document.getElementById("form1");
-                form1.action="/hisabaat/UserProcess/logout";
+                form1.action="/ruyaa/UserProcess/logout";
                 form1.submit();
             }
 
@@ -102,7 +102,7 @@ text-decoration: underline;
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/ruyaa/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -125,79 +125,79 @@ for(Cookie cookie : cookies){
 						<tr style="height: 45px;">
 							
 									<td style="padding-left: 20px;">
-								<a target="mainFrame" href="/hisabaat/welcome" ><label style="font-family: Tahoma;font-weight: bolder;color: #143160;font-size: 14px;">${branchname}</label></a>
+								<a target="mainFrame" href="/ruyaa/welcome" ><label style="font-family: Tahoma;font-weight: bolder;color: #143160;font-size: 14px;">${branchname}</label></a>
 								</td>
 								
-							<!-- <td align="left"><img src="/hisabaat/images/hisabaatheader.png"
+							<!-- <td align="left"><img src="/ruyaa/images/ruyaaheader.png"
 								style="width: 200px; height: 20px;" /></td> -->
-							<!-- <td><a target="leftFrame" href="/hisabaat/left_officeadmin"> <img
-									src="/hisabaat/images/home.svg" width="18" height="18" 
+							<!-- <td><a target="leftFrame" href="/ruyaa/left_officeadmin"> <img
+									src="/ruyaa/images/home.svg" width="18" height="18" 
 									alt="Home" style="vertical-align: bottom;font-size: 144px;" />Home
 							</a></td>
 
 							<td><a target="mainFrame"
-								href="/hisabaat/FeesProcess/feesCollect"> <img
-									src="/hisabaat/images/feescollect.svg" width="18" height="18"
+								href="/ruyaa/FeesProcess/feesCollect"> <img
+									src="/ruyaa/images/feescollect.svg" width="18" height="18"
 									alt="Fees Collection" style="vertical-align: bottom;" />Fees Collection
 							</a></td>
 
 							<td>
 								<a target="mainFrame"
-								href="/hisabaat/AccountProcess/createVoucher"> <img
-									src="/hisabaat/images/createvoucher.svg" width="18" height="18"
+								href="/ruyaa/AccountProcess/createVoucher"> <img
+									src="/ruyaa/images/createvoucher.svg" width="18" height="18"
 									alt="Create Voucher" style="vertical-align: bottom;" />
 									Create Voucher
 								</a>
 							</td>
 
-							<td ><a target="mainFrame" href="/hisabaat/feesCollectionDetails"><img  alt="Fees Details" src="/hisabaat/images/feescoll.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
+							<td ><a target="mainFrame" href="/ruyaa/feesCollectionDetails"><img  alt="Fees Details" src="/ruyaa/images/feescoll.png" width="30" height="30" /> <div id="" class="noti_bubbleEmpty"></div><div id="" class="noti_bubbleEmpty"></div></a></td>
                                             <td><label style="color:white;font-size: 12px;">Fees <br>Details</label></td>
 
 							<td><a target="mainFrame"
-								href="/hisabaat/StudentProcess/addNew"> <img
-									src="/hisabaat/images/student_header.svg" width="18" height="18"
+								href="/ruyaa/StudentProcess/addNew"> <img
+									src="/ruyaa/images/student_header.svg" width="18" height="18"
 									alt="Add New Student" style="vertical-align: bottom;" />Add Student
 							</a></td>
 
-							<td ><a target="leftFrame" href="/hisabaat/leftsettings_officeadmin">
-									<img alt="Settings" src="/hisabaat/images/settings.svg" width="18"
+							<td ><a target="leftFrame" href="/ruyaa/leftsettings_officeadmin">
+									<img alt="Settings" src="/ruyaa/images/settings.svg" width="18"
 									height="18" style="vertical-align: bottom;" />Master Settings
 							</a></td>
 
 							<td ><a target="mainFrame"
-								href="/hisabaat/AdminProcess/viewAllExpenses"><img
-									alt="Admin Exp" src="/hisabaat/images/adminexp.svg" width="18" height="18" style="vertical-align: bottom;"/>
+								href="/ruyaa/AdminProcess/viewAllExpenses"><img
+									alt="Admin Exp" src="/ruyaa/images/adminexp.svg" width="18" height="18" style="vertical-align: bottom;"/>
 									Admin Expense
 							</a></td>
 
-							<td ><a target="mainFrame" href="/hisabaat/sendsms"><img
-									src="/hisabaat/images/sendmessage.svg" width="18" height="18" alt="Send SMS" style="vertical-align: bottom;"/>
+							<td ><a target="mainFrame" href="/ruyaa/sendsms"><img
+									src="/ruyaa/images/sendmessage.svg" width="18" height="18" alt="Send SMS" style="vertical-align: bottom;"/>
 									Send Message		
 							</a>
-								<a target="leftFrame" href="/hisabaat/reports_officeadmin"><img
-									src="/hisabaat/images/reports.svg" width="18" height="18" alt="Reports" style="vertical-align: bottom;"/>
+								<a target="leftFrame" href="/ruyaa/reports_officeadmin"><img
+									src="/ruyaa/images/reports.svg" width="18" height="18" alt="Reports" style="vertical-align: bottom;"/>
 									Reports		
 								</a>
 							
 							</td>
 
 							<td ><a target="mainFrame"
-								href="/hisabaat/StudentProcess/viewAllStudentsWithParents"><img
-									alt="View All Students" src="/hisabaat/images/students.svg" width="18"
+								href="/ruyaa/StudentProcess/viewAllStudentsWithParents"><img
+									alt="View All Students" src="/ruyaa/images/students.svg" width="18"
 									height="18" style="vertical-align: bottom;"/>
 								View Students
 							</a></td> -->
 							
 							<!-- <td ><a target="mainFrame"
-								href="/hisabaat/UserProcess/dashBoard"><img
-									alt="Dash Board" src="/hisabaat/images/dashboard.svg" width="18"
+								href="/ruyaa/UserProcess/dashBoard"><img
+									alt="Dash Board" src="/ruyaa/images/dashboard.svg" width="18"
 									height="18" style="vertical-align: bottom;"/>
 									Dash Board
 									</a></td> -->
 								
 							<td ><a target="_parent"
-								href="/hisabaat/UserProcess/logout"><img
-									src="/hisabaat/images/logout.svg" width="18" height="18" alt="Log Out" 
+								href="/ruyaa/UserProcess/logout"><img
+									src="/ruyaa/images/logout.svg" width="18" height="18" alt="Log Out" 
 									style="vertical-align: bottom;"/>Logout</a></td>
 							<td width="60"></td>
 						</tr>

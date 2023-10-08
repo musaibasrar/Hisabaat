@@ -130,13 +130,15 @@ table, tbody {
 				colspan="11">
 				<p class="s1"
 					style="padding-left: 18pt; text-indent: 0pt; line-height: 22pt; text-align: center;">
-					<span class="s3">TAX INVOICE</span>
+					<span class="s3">&nbsp;&nbsp;INVOICE</span>
 				<br>
 				</p>
 				
 				<p class="s1"
 					style="padding-left: 31pt; text-indent: 0pt; line-height: 16pt; text-align: center;">
-					<span class="s4">Hisabaat</span>
+					<span class="s4">${branchname}</span><br/>
+					<span class="s4">${branchaddress}</span><br/>
+					<span class="s4">${branchcontact}</span>
 				</p></td>
 		</tr>
 		<tr style="height: 19pt">
@@ -181,7 +183,7 @@ table, tbody {
 					No.</p></td>
 			<td
 				style="width: 90pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
-				colspan="2"><p style="text-indent: 0pt; text-align: left;">&nbsp;&nbsp;123456798
+				colspan="2"><p style="text-indent: 0pt; text-align: left;">&nbsp;&nbsp;
 					<br />
 				</p></td>
 		</tr>
@@ -221,28 +223,28 @@ table, tbody {
 				<p class="s6"
 					style="padding-left: 1pt; text-indent: 0pt; text-align: center;">Batch No.</p></td>
 			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+				style="width: 50pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
 					style="padding-left: 6pt; text-indent: 0pt; text-align: center;">Quantity</p></td>
 			<td
-				style="width: 30pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+				style="width: 50pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
 					style="padding-left: 5pt; text-indent: 0pt; text-align: center;">Units</p></td>
 			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+				style="width: 50pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
 				<p class="s6"
 					style="padding-left: 13pt; text-indent: 0pt; text-align: center;">Rate</p></td>
 			<td
-				style="width: 45pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
+				style="width: 50pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"><p
 					style="text-indent: 0pt; text-align: left;">
 					<br />
 				</p>
@@ -358,7 +360,7 @@ table, tbody {
 			<td
 				style="width: 165pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 1pt"
 				colspan="4"><p class="s6"
-					style="padding-top: 5pt; padding-right: 10pt; text-indent: 0pt; text-align: right;font-size: 12pt;">Total
+					style="padding-top: 5pt; padding-right: 10pt; text-indent: 0pt; text-align: left;font-size: 12pt;">Total
 					Invoice Value</p></td>
 			<td
 				style="width: 180pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
@@ -379,8 +381,7 @@ table, tbody {
 					<br />
 				</p>
 				<p class="s6"
-					style="text-indent: 0pt; text-align: right;font-size: 12pt;padding-right: 10pt;">Total
-					Invoice Value(In Words)</p></td>
+					style="text-indent: 0pt; text-align: left;font-size: 12pt;padding-right: 1pt;">Total Invoice Value(In Words)</p></td>
 			<td
 				style="width: 1820pt; border-top-style: solid; border-top-width: 1pt; border-left-style: solid; border-left-width: 1pt; border-bottom-style: solid; border-bottom-width: 1pt; border-right-style: solid; border-right-width: 2pt"
 				colspan="4"><p class="s6" style="text-indent: 0pt; text-align: left;font-size: 12pt;">
@@ -405,5 +406,6 @@ table, tbody {
 		</tr>
 	</table>
 	<p style="text-indent: 0pt; text-align: left;" />
+	<p>This is a Computer Generated Invoice</p>
 </body>
 </html>

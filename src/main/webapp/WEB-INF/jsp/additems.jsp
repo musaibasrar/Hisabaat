@@ -14,8 +14,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Add Items</title>
-<link rel="stylesheet" href="/hisabaat/css/datePicker/jquery-ui-1.8.18.custom.css">
-<link rel="stylesheet" href="/hisabaat/css/datePicker/demos.css">
+<link rel="stylesheet" href="/ruyaa/css/datePicker/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/ruyaa/css/datePicker/demos.css">
 
 <style type="text/css">
 
@@ -421,10 +421,10 @@
 
 </style>
 
-<script type="text/javascript" src="/hisabaat/js/datePicker/jquery-1.7.1.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
-<script type="text/javascript" src="/hisabaat/js/dataTable/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/hisabaat/js/datePicker/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="/ruyaa/js/datePicker/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/ruyaa/js/datePicker/ui/jquery-ui-1.8.17.custom.js"></script>
+<script type="text/javascript" src="/ruyaa/js/dataTable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/ruyaa/js/datePicker/ui/jquery.ui.datepicker.js"></script>
 
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
@@ -448,7 +448,7 @@
 	});
 </script>
 
-<script type="text/javascript" src="/hisabaat/js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="/ruyaa/js/datetimepicker_css.js"></script>
 <script type="text/javascript">
 
 
@@ -486,7 +486,7 @@
 	function addItems(){
 		var form1 = document.getElementById("form1");
 		if(form1.checkValidity()) {
-			form1.action = "/hisabaat/MessItemsProcess/addItems";
+			form1.action = "/ruyaa/MessItemsProcess/addItems";
 			form1.method = "POST";
 			form1.submit();
 		}
@@ -495,13 +495,13 @@
 	
 	function updateItems(){
 		var form1 = document.getElementById("form1");
-			form1.action = "/hisabaat/MessItemsProcess/updateItems";
+			form1.action = "/ruyaa/MessItemsProcess/updateItems";
 			form1.method = "POST";
 			form1.submit();	
 	}
 	
 	function deleteItems(){
-			form1.action = "/hisabaat/MessItemsProcess/deleteItems";
+			form1.action = "/ruyaa/MessItemsProcess/deleteItems";
 			form1.method = "POST";
 			form1.submit();	
 	}
@@ -580,7 +580,7 @@
 //allow access only if session exists
 String user = null;
 if(session.getAttribute("userAuth") == null){
-	response.sendRedirect("/hisabaat/UserProcess/sessionTimeOut");
+	response.sendRedirect("/ruyaa/UserProcess/sessionTimeOut");
 }else user = (String) session.getAttribute("userAuth");
 String userName = null;
 String sessionID = null;
@@ -632,12 +632,9 @@ for(Cookie cookie : cookies){
 									<td><label> <select name="unitofmeasure"
 									id="unitofmeasure" style="font-size: 14px;" class="dropdownlist" required>
 										<option selected></option>
-										<option>Kilogram</option>
-										<option>Litre</option>
 										<option>Piece</option>
 										<option>Box</option>
 										<option>Packet</option>
-										
 								</select></label></td>
 								
 								<td class="alignRight">&nbsp;&nbsp;&nbsp;&nbsp;Min. Stock &nbsp;</td>
