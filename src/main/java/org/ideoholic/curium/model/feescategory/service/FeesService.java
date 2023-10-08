@@ -206,7 +206,7 @@ public class FeesService {
 	 * } new feesCategoryDAO().waiveOffFees(sfsId,feesCatId,studentId);
 	 * 
 	 * return
-	 * "Controller?process=StudentProcess&action=ViewFeesStructure&id="+studentId; }
+	 * "/ruyaa/StudentProcess/ViewFeesStructure&id="+studentId; }
 	 * 
 	 * return "error.jsp";
 	 * 
